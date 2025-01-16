@@ -201,7 +201,7 @@
   height: 100%;
   min-width: 0;
   min-height: 0;
-  border-radius: 50px;
+  border-radius: 0px;
   padding: var(--token-gZhDoKTbbfZs) var(--token-J4XZoE8eztGf);
 }
 .freeBox__z0HFo > :global(.__wab_flex-container) {

@@ -1,6 +1,46 @@
 {
   "props": [
     {
+      "name": "Basic/Border",
+      "type": "color",
+      "value": "#D1D5DB",
+      "category": "color",
+      "meta": {
+        "projectId": "pwPQehv5dRCmck24osLGTw",
+        "id": "NMQ2va-2cg1t"
+      }
+    },
+    {
+      "name": "Basic/Container-Background",
+      "type": "color",
+      "value": "#FFFFFF",
+      "category": "color",
+      "meta": {
+        "projectId": "pwPQehv5dRCmck24osLGTw",
+        "id": "HaFCvOAbDghc"
+      }
+    },
+    {
+      "name": "Basic/Text-Primary",
+      "type": "color",
+      "value": "#030712",
+      "category": "color",
+      "meta": {
+        "projectId": "pwPQehv5dRCmck24osLGTw",
+        "id": "DIkFv1-GjnyC"
+      }
+    },
+    {
+      "name": "Basic/Text-Secondary",
+      "type": "color",
+      "value": "#6B7280",
+      "category": "color",
+      "meta": {
+        "projectId": "pwPQehv5dRCmck24osLGTw",
+        "id": "7GV1p393KNQ2"
+      }
+    },
+    {
       "name": "Brand/Brand",
       "type": "color",
       "value": "#2563EB",
@@ -241,6 +281,16 @@
       }
     },
     {
+      "name": "Muted/Muted-Soft-Hover",
+      "type": "color",
+      "value": "#E5E7EB",
+      "category": "color",
+      "meta": {
+        "projectId": "pwPQehv5dRCmck24osLGTw",
+        "id": "I9JDTrKpfoEY"
+      }
+    },
+    {
       "name": "Neutral/Neutral",
       "type": "color",
       "value": "#374151",
@@ -321,6 +371,16 @@
       }
     },
     {
+      "name": "Size-16",
+      "type": "spacing",
+      "value": "1rem",
+      "category": "spacing",
+      "meta": {
+        "projectId": "pwPQehv5dRCmck24osLGTw",
+        "id": "-cDxbIntzYXX"
+      }
+    },
+    {
       "name": "Size-2",
       "type": "spacing",
       "value": "0.125rem",
@@ -328,6 +388,16 @@
       "meta": {
         "projectId": "pwPQehv5dRCmck24osLGTw",
         "id": "jy3iGcot7_FD"
+      }
+    },
+    {
+      "name": "Size-32",
+      "type": "spacing",
+      "value": "2rem",
+      "category": "spacing",
+      "meta": {
+        "projectId": "pwPQehv5dRCmck24osLGTw",
+        "id": "m0R0QCxgPEi0"
       }
     },
     {

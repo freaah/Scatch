@@ -1,0 +1,80 @@
+.root:global(.__wab_instance) {
+  position: relative;
+  cursor: pointer;
+  color: var(--token-DIkFv1-GjnyC);
+  font-family: var(--token-dj3CG1mNR2XK);
+  font-size: var(--token-8f8w7tlxiQTd);
+  line-height: var(--token-s1euPUOXvrms);
+  outline-style: none;
+  border-radius: var(--token-gZhDoKTbbfZs);
+}
+.root[data-hovered]:global(.__wab_instance) {
+  background: var(--token-DlTXA28QTeCV);
+}
+.root[data-selected]:global(.__wab_instance) {
+  background: var(--token-IOD8RaS7nkit);
+}
+.root[data-disabled]:global(.__wab_instance) {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.root[data-focus-visible]:global(.__wab_instance) {
+  outline-style: solid;
+  outline-width: var(--token-jy3iGcot7_FD);
+  outline-color: var(--token-sfRo3tXTXvHr);
+  outline-offset: 1px;
+}
+.freeBox__eduow {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: var(--token-DuxxdL72ETky) var(--token-J4XZoE8eztGf);
+}
+.freeBox__eduow > :global(.__wab_flex-container) {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  margin-left: calc(0px - 2px);
+  width: calc(100% + 2px);
+  margin-top: calc(0px - var(--token-jy3iGcot7_FD));
+  height: calc(100% + var(--token-jy3iGcot7_FD));
+}
+.freeBox__eduow > :global(.__wab_flex-container) > *,
+.freeBox__eduow > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__eduow > :global(.__wab_flex-container) > picture > img,
+.freeBox__eduow
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 2px;
+  margin-top: var(--token-jy3iGcot7_FD);
+}
+.freeBox__wmi5 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+}
+.text__mcEsr {
+  color: #000000;
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+}
+.text___0Ylnc {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  color: var(--token-7GV1p393KNQ2);
+  min-width: 0;
+}

@@ -7,7 +7,7 @@
   },
   "style": {
     "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
   },
   "images": {
     "scheme": "files",
@@ -227,7 +227,8 @@
           "componentImportPath": "@plasmicpkgs/react-aria/skinny/registerDialog"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "pwPQehv5dRCmck24osLGTw",
@@ -290,6 +291,178 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/profile"
+        },
+        {
+          "id": "C-jOeFDj6oe_",
+          "name": "Label",
+          "type": "managed",
+          "projectId": "pwPQehv5dRCmck24osLGTw",
+          "renderModuleFilePath": "plasmic/scatch/PlasmicLabel.jsx",
+          "importSpec": {
+            "modulePath": "Label.jsx"
+          },
+          "cssFilePath": "plasmic/scatch/PlasmicLabel.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "up1nFNnGq-43",
+          "name": "Description",
+          "type": "managed",
+          "projectId": "pwPQehv5dRCmck24osLGTw",
+          "renderModuleFilePath": "plasmic/scatch/PlasmicDescription.jsx",
+          "importSpec": {
+            "modulePath": "Description.jsx"
+          },
+          "cssFilePath": "plasmic/scatch/PlasmicDescription.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "SPPaFCfdP_1a",
+          "name": "MenuItem",
+          "type": "managed",
+          "projectId": "pwPQehv5dRCmck24osLGTw",
+          "renderModuleFilePath": "plasmic/scatch/PlasmicMenuItem.jsx",
+          "importSpec": {
+            "modulePath": "MenuItem.jsx"
+          },
+          "cssFilePath": "plasmic/scatch/PlasmicMenuItem.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "drP1rP4tOce6",
+          "name": "MenuSection",
+          "type": "managed",
+          "projectId": "pwPQehv5dRCmck24osLGTw",
+          "renderModuleFilePath": "plasmic/scatch/PlasmicMenuSection.jsx",
+          "importSpec": {
+            "modulePath": "MenuSection.jsx"
+          },
+          "cssFilePath": "plasmic/scatch/PlasmicMenuSection.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "OFqZOLZX3suu",
+          "name": "MenuPopover",
+          "type": "managed",
+          "projectId": "pwPQehv5dRCmck24osLGTw",
+          "renderModuleFilePath": "plasmic/scatch/PlasmicMenuPopover.jsx",
+          "importSpec": {
+            "modulePath": "MenuPopover.jsx"
+          },
+          "cssFilePath": "plasmic/scatch/PlasmicMenuPopover.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "WDmcJsuYHVsc",
+          "name": "Select",
+          "type": "managed",
+          "projectId": "pwPQehv5dRCmck24osLGTw",
+          "renderModuleFilePath": "plasmic/scatch/PlasmicSelect.jsx",
+          "importSpec": {
+            "modulePath": "Select.jsx"
+          },
+          "cssFilePath": "plasmic/scatch/PlasmicSelect.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "OquQxNPlwArq",
+          "name": "TextInput",
+          "type": "managed",
+          "projectId": "pwPQehv5dRCmck24osLGTw",
+          "renderModuleFilePath": "plasmic/scatch/PlasmicTextInput.jsx",
+          "importSpec": {
+            "modulePath": "TextInput.jsx"
+          },
+          "cssFilePath": "plasmic/scatch/PlasmicTextInput.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "7QNCWTP-3pH2",
+          "name": "TextAreaInput",
+          "type": "managed",
+          "projectId": "pwPQehv5dRCmck24osLGTw",
+          "renderModuleFilePath": "plasmic/scatch/PlasmicTextAreaInput.jsx",
+          "importSpec": {
+            "modulePath": "TextAreaInput.jsx"
+          },
+          "cssFilePath": "plasmic/scatch/PlasmicTextAreaInput.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "jHJkxpVOWWNk",
+          "name": "TextField",
+          "type": "managed",
+          "projectId": "pwPQehv5dRCmck24osLGTw",
+          "renderModuleFilePath": "plasmic/scatch/PlasmicTextField.jsx",
+          "importSpec": {
+            "modulePath": "TextField.jsx"
+          },
+          "cssFilePath": "plasmic/scatch/PlasmicTextField.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "A4fMpm2bvQQV",
+          "name": "Combobox",
+          "type": "managed",
+          "projectId": "pwPQehv5dRCmck24osLGTw",
+          "renderModuleFilePath": "plasmic/scatch/PlasmicCombobox.jsx",
+          "importSpec": {
+            "modulePath": "Combobox.jsx"
+          },
+          "cssFilePath": "plasmic/scatch/PlasmicCombobox.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "5kBTZfShVyAc",
+          "name": "LineykaPlastikovayaAttacheEconomy",
+          "type": "managed",
+          "projectId": "pwPQehv5dRCmck24osLGTw",
+          "renderModuleFilePath": "plasmic/scatch/PlasmicLineykaPlastikovayaAttacheEconomy.jsx",
+          "importSpec": {
+            "modulePath": "LineykaPlastikovayaAttacheEconomy.jsx"
+          },
+          "cssFilePath": "plasmic/scatch/PlasmicLineykaPlastikovayaAttacheEconomy.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/lineyka-plastikovaya-attache-economy"
+        },
+        {
+          "id": "pSDWCYbKxqQn",
+          "name": "Qa",
+          "type": "managed",
+          "projectId": "pwPQehv5dRCmck24osLGTw",
+          "renderModuleFilePath": "plasmic/scatch/PlasmicQa.jsx",
+          "importSpec": {
+            "modulePath": "Qa.jsx"
+          },
+          "cssFilePath": "plasmic/scatch/PlasmicQa.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/qa"
+        },
+        {
+          "id": "QXiMKVHMMGLF",
+          "name": "About",
+          "type": "managed",
+          "projectId": "pwPQehv5dRCmck24osLGTw",
+          "renderModuleFilePath": "plasmic/scatch/PlasmicAbout.jsx",
+          "importSpec": {
+            "modulePath": "About.jsx"
+          },
+          "cssFilePath": "plasmic/scatch/PlasmicAbout.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/about"
         }
       ],
       "icons": [

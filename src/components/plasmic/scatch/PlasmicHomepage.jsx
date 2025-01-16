@@ -13,10 +13,16 @@ import {
   PlasmicImg as PlasmicImg__,
   classNames,
   createPlasmicElementProxy,
-  deriveRenderOpts
+  deriveRenderOpts,
+  generateStateOnChangeProp,
+  set as $stateSet,
+  useDollarState
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import Button from "../../Button"; // plasmic-import: YEbXEiVokJ6F/component
+import Select from "../../Select"; // plasmic-import: WDmcJsuYHVsc/component
+import MenuItem from "../../MenuItem"; // plasmic-import: SPPaFCfdP_1a/component
+import TextField from "../../TextField"; // plasmic-import: jHJkxpVOWWNk/component
 import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: pwPQehv5dRCmck24osLGTw/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: Tk2xyQel6ClW/css
@@ -25,7 +31,6 @@ import HeartIcon from "./icons/PlasmicIcon__Heart"; // plasmic-import: e7qkCN3NB
 import CartIcon from "./icons/PlasmicIcon__Cart"; // plasmic-import: XvKAHPgz-9Dl/icon
 import ProfileIcon from "./icons/PlasmicIcon__Profile"; // plasmic-import: V9FA4UKafOeV/icon
 import Location2Icon from "./icons/PlasmicIcon__Location2"; // plasmic-import: rMYIo-GnlfK6/icon
-import Vector14Icon from "./icons/PlasmicIcon__Vector14"; // plasmic-import: nXpw03loerny/icon
 import SearchIcon from "./icons/PlasmicIcon__Search"; // plasmic-import: 0A_Djc7hhrf6/icon
 import Vector12Icon from "./icons/PlasmicIcon__Vector12"; // plasmic-import: 8eGtdzp2vDu8/icon
 import Vector13Icon from "./icons/PlasmicIcon__Vector13"; // plasmic-import: 7jwFzd-VW_o-/icon
@@ -70,6 +75,43 @@ function PlasmicHomepage__RenderFunc(props) {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "citySelector.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "city",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          "\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a"
+      },
+      {
+        path: "searchField.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "mailField.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      }
+    ],
+
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
   return (
     <React.Fragment>
       <div className={projectcss.plasmic_page_wrapper}>
@@ -108,6 +150,12 @@ function PlasmicHomepage__RenderFunc(props) {
                 />
               </div>
               <div
+                data-plasmic-name={"freeBox"}
+                data-plasmic-override={overrides.freeBox}
+                className={classNames(projectcss.all, sty.freeBox)}
+              />
+
+              <div
                 data-plasmic-name={"rightPanel"}
                 data-plasmic-override={overrides.rightPanel}
                 className={classNames(projectcss.all, sty.rightPanel)}
@@ -139,7 +187,9 @@ function PlasmicHomepage__RenderFunc(props) {
                   }
                 </div>
                 <Button
-                  className={classNames("__wab_instance", sty.button__oOo8X)}
+                  data-plasmic-name={"toProfile"}
+                  data-plasmic-override={overrides.toProfile}
+                  className={classNames("__wab_instance", sty.toProfile)}
                   onClick={async event => {
                     const $steps = {};
                     $steps["goToProfile"] = true
@@ -170,7 +220,9 @@ function PlasmicHomepage__RenderFunc(props) {
                 />
 
                 <Button
-                  className={classNames("__wab_instance", sty.button__hF7Mc)}
+                  data-plasmic-name={"toCart"}
+                  data-plasmic-override={overrides.toCart}
+                  className={classNames("__wab_instance", sty.toCart)}
                   onClick={async event => {
                     const $steps = {};
                     $steps["goToCart"] = true
@@ -216,11 +268,6 @@ function PlasmicHomepage__RenderFunc(props) {
                   role={"img"}
                 />
 
-                <Vector14Icon
-                  className={classNames(projectcss.all, sty.svg___9QxJo)}
-                  role={"img"}
-                />
-
                 <div
                   data-plasmic-name={
                     "\u0440\u0435\u0433\u0438\u043e\u043d\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0438"
@@ -236,21 +283,99 @@ function PlasmicHomepage__RenderFunc(props) {
                     " \u0420\u0435\u0433\u0438\u043e\u043d \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0438:\n"
                   }
                 </div>
-                <div
-                  data-plasmic-name={
-                    "\u0433\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a"
+                <Select
+                  data-plasmic-name={"citySelector"}
+                  data-plasmic-override={overrides.citySelector}
+                  className={classNames("__wab_instance", sty.citySelector)}
+                  description={"Description..."}
+                  initialSelectedValue={
+                    "\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a"
                   }
-                  data-plasmic-override={overrides.гВладивосток}
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.гвладивосток
-                  )}
-                >
-                  {
-                    " \u0433. \u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a"
+                  items={
+                    <React.Fragment>
+                      <MenuItem
+                        label={
+                          "\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a"
+                        }
+                        value={
+                          "\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a"
+                        }
+                      />
+
+                      <MenuItem
+                        label={
+                          "\u0425\u0430\u0431\u0430\u0440\u043e\u0432\u0441\u043a"
+                        }
+                        value={
+                          "\u0425\u0430\u0431\u0430\u0440\u043e\u0432\u0441\u043a"
+                        }
+                      />
+
+                      <MenuItem
+                        label={
+                          "\u0421\u043f\u0430\u0441\u0441\u043a-\u0414\u0430\u043b\u044c\u043d\u0438\u0439"
+                        }
+                        value={
+                          "\u0421\u043f\u0430\u0441\u0441\u043a-\u0414\u0430\u043b\u044c\u043d\u0438\u0439"
+                        }
+                      />
+
+                      <MenuItem
+                        label={"\u0410\u0440\u0442\u0435\u043c"}
+                        value={"\u0410\u0440\u0442\u0435\u043c"}
+                      />
+
+                      <MenuItem
+                        label={"\u041d\u0430\u0445\u043e\u0434\u043a\u0430"}
+                        value={"\u041d\u0430\u0445\u043e\u0434\u043a\u0430"}
+                      />
+
+                      <MenuItem
+                        label={
+                          "\u0425\u0430\u0431\u0430\u0440\u043e\u0432\u0441\u043a"
+                        }
+                        value={
+                          "\u0425\u0430\u0431\u0430\u0440\u043e\u0432\u0441\u043a"
+                        }
+                      />
+
+                      <MenuItem
+                        label={
+                          "\u041f\u0435\u0442\u0440\u043e\u043f\u0430\u043b\u043e\u0432\u0441\u043a-\u041a\u0430\u043c\u0447\u0430\u0442\u0441\u043a\u0438\u0439"
+                        }
+                        value={
+                          "\u041f\u0435\u0442\u0440\u043e\u043f\u0430\u043b\u043e\u0432\u0441\u043a-\u041a\u0430\u043c\u0447\u0430\u0442\u0441\u043a\u0438\u0439"
+                        }
+                      />
+
+                      <MenuItem
+                        label={
+                          "\u042e\u0436\u043d\u043e-\u0421\u0430\u0445\u0430\u043b\u0438\u043d\u0441\u043a"
+                        }
+                        value={
+                          "\u042e\u0436\u043d\u043e-\u0421\u0430\u0445\u0430\u043b\u0438\u043d\u0441\u043a"
+                        }
+                      />
+                    </React.Fragment>
                   }
-                </div>
+                  label={null}
+                  onChange={async (...eventArgs) => {
+                    generateStateOnChangeProp($state, [
+                      "citySelector",
+                      "value"
+                    ]).apply(null, eventArgs);
+                    if (
+                      eventArgs.length > 1 &&
+                      eventArgs[1] &&
+                      eventArgs[1]._plasmic_state_init_
+                    ) {
+                      return;
+                    }
+                  }}
+                  placeholder={`Select an item${$state.citySelector.value}`}
+                  showDescription={false}
+                  showLabel={false}
+                />
               </div>
               <div
                 data-plasmic-name={"search"}
@@ -263,6 +388,89 @@ function PlasmicHomepage__RenderFunc(props) {
                   className={classNames(projectcss.all, sty.rectangle1)}
                 />
 
+                <TextField
+                  data-plasmic-name={"searchField"}
+                  data-plasmic-override={overrides.searchField}
+                  className={classNames("__wab_instance", sty.searchField)}
+                  defaultValue={``}
+                  description={
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___60Cax
+                      )}
+                    >
+                      {"Description..."}
+                    </div>
+                  }
+                  inputMode={"text"}
+                  label={
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__vh6Cs
+                      )}
+                    >
+                      {"Label"}
+                    </div>
+                  }
+                  onChange={async (...eventArgs) => {
+                    generateStateOnChangeProp($state, [
+                      "searchField",
+                      "value"
+                    ]).apply(null, eventArgs);
+                    if (
+                      eventArgs.length > 1 &&
+                      eventArgs[1] &&
+                      eventArgs[1]._plasmic_state_init_
+                    ) {
+                      return;
+                    }
+                  }}
+                  placeholder={
+                    "\u041f\u043e\u0438\u0441\u043a \u0442\u043e\u0432\u0430\u0440\u043e\u0432"
+                  }
+                  showDescription={false}
+                  showLabel={false}
+                />
+
+                <Button
+                  data-plasmic-name={"searchButton"}
+                  data-plasmic-override={overrides.searchButton}
+                  className={classNames("__wab_instance", sty.searchButton)}
+                  label={null}
+                  onClick={async event => {
+                    const $steps = {};
+                    $steps["goToPage"] = true
+                      ? (() => {
+                          const actionArgs = {};
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              location.assign(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToPage"] != null &&
+                      typeof $steps["goToPage"] === "object" &&
+                      typeof $steps["goToPage"].then === "function"
+                    ) {
+                      $steps["goToPage"] = await $steps["goToPage"];
+                    }
+                  }}
+                  roundedFull={true}
+                />
+
                 <div
                   data-plasmic-name={"rectangle2"}
                   data-plasmic-override={overrides.rectangle2}
@@ -273,18 +481,6 @@ function PlasmicHomepage__RenderFunc(props) {
                   className={classNames(projectcss.all, sty.svg__vhDRa)}
                   role={"img"}
                 />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__cozGr
-                  )}
-                >
-                  {
-                    "\u041f\u043e\u0438\u0441\u043a \u0442\u043e\u0432\u0430\u0440\u043e\u0432"
-                  }
-                </div>
               </div>
             </div>
             <div
@@ -839,6 +1035,47 @@ function PlasmicHomepage__RenderFunc(props) {
                 data-plasmic-override={overrides.item52}
                 className={classNames(projectcss.all, sty.item52)}
               >
+                <Button
+                  data-plasmic-name={"button"}
+                  data-plasmic-override={overrides.button}
+                  className={classNames("__wab_instance", sty.button)}
+                  label={null}
+                  onClick={async event => {
+                    const $steps = {};
+                    $steps["updateCity"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["city"]
+                            },
+                            operation: 0
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateCity"] != null &&
+                      typeof $steps["updateCity"] === "object" &&
+                      typeof $steps["updateCity"].then === "function"
+                    ) {
+                      $steps["updateCity"] = await $steps["updateCity"];
+                    }
+                  }}
+                />
+
                 <div
                   data-plasmic-name={"rectangle15"}
                   data-plasmic-override={overrides.rectangle15}
@@ -846,15 +1083,15 @@ function PlasmicHomepage__RenderFunc(props) {
                 />
 
                 <div
-                  data-plasmic-name={"rectangle539"}
-                  data-plasmic-override={overrides.rectangle539}
-                  className={classNames(projectcss.all, sty.rectangle539)}
-                />
-
-                <div
                   data-plasmic-name={"image18"}
                   data-plasmic-override={overrides.image18}
                   className={classNames(projectcss.all, sty.image18)}
+                />
+
+                <div
+                  data-plasmic-name={"rectangle539"}
+                  data-plasmic-override={overrides.rectangle539}
+                  className={classNames(projectcss.all, sty.rectangle539)}
                 />
 
                 <div
@@ -1072,7 +1309,66 @@ function PlasmicHomepage__RenderFunc(props) {
                   data-plasmic-name={"send1"}
                   data-plasmic-override={overrides.send1}
                   className={classNames(projectcss.all, sty.send1)}
-                />
+                >
+                  <TextField
+                    data-plasmic-name={"mailField"}
+                    data-plasmic-override={overrides.mailField}
+                    className={classNames("__wab_instance", sty.mailField)}
+                    onChange={async (...eventArgs) => {
+                      generateStateOnChangeProp($state, [
+                        "mailField",
+                        "value"
+                      ]).apply(null, eventArgs);
+                      if (
+                        eventArgs.length > 1 &&
+                        eventArgs[1] &&
+                        eventArgs[1]._plasmic_state_init_
+                      ) {
+                        return;
+                      }
+                    }}
+                    showLabel={false}
+                  />
+
+                  <GroupIcon
+                    className={classNames(projectcss.all, sty.svg__cNMl)}
+                    onClick={async event => {
+                      const $steps = {};
+                      $steps["updateStateVariable"] = true
+                        ? (() => {
+                            const actionArgs = {};
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+                              undefined;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateStateVariable"] != null &&
+                        typeof $steps["updateStateVariable"] === "object" &&
+                        typeof $steps["updateStateVariable"].then === "function"
+                      ) {
+                        $steps["updateStateVariable"] = await $steps[
+                          "updateStateVariable"
+                        ];
+                      }
+                    }}
+                    role={"img"}
+                  />
+
+                  <Letter2Icon
+                    className={classNames(projectcss.all, sty.svg___2Jskx)}
+                    role={"img"}
+                  />
+                </div>
               </div>
               <div
                 className={classNames(
@@ -1094,59 +1390,6 @@ function PlasmicHomepage__RenderFunc(props) {
               >
                 {"\u0420\u0430\u0441\u0441\u044b\u043b\u043a\u0430"}
               </div>
-              <div
-                data-plasmic-name={"rectangle20"}
-                data-plasmic-override={overrides.rectangle20}
-                className={classNames(projectcss.all, sty.rectangle20)}
-              >
-                <GroupIcon
-                  className={classNames(projectcss.all, sty.svg__cNMl)}
-                  onClick={async event => {
-                    const $steps = {};
-                    $steps["updateStateVariable"] = true
-                      ? (() => {
-                          const actionArgs = {};
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-                            undefined;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateStateVariable"] != null &&
-                      typeof $steps["updateStateVariable"] === "object" &&
-                      typeof $steps["updateStateVariable"].then === "function"
-                    ) {
-                      $steps["updateStateVariable"] = await $steps[
-                        "updateStateVariable"
-                      ];
-                    }
-                  }}
-                  role={"img"}
-                />
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___8G0R6
-                )}
-              >
-                {"\u0412\u0430\u0448 e-mail"}
-              </div>
-              <Letter2Icon
-                className={classNames(projectcss.all, sty.svg___2Jskx)}
-                role={"img"}
-              />
-
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__zToW)}
@@ -1458,6 +1701,74 @@ function PlasmicHomepage__RenderFunc(props) {
               >
                 {"\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b"}
               </div>
+              <Button
+                data-plasmic-name={"toAboutButton"}
+                data-plasmic-override={overrides.toAboutButton}
+                className={classNames("__wab_instance", sty.toAboutButton)}
+                label={null}
+                onClick={async event => {
+                  const $steps = {};
+                  $steps["goToQa"] = true
+                    ? (() => {
+                        const actionArgs = { destination: `/qa` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            location.assign(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToQa"] != null &&
+                    typeof $steps["goToQa"] === "object" &&
+                    typeof $steps["goToQa"].then === "function"
+                  ) {
+                    $steps["goToQa"] = await $steps["goToQa"];
+                  }
+                }}
+              />
+
+              <Button
+                data-plasmic-name={"toAboutButton2"}
+                data-plasmic-override={overrides.toAboutButton2}
+                className={classNames("__wab_instance", sty.toAboutButton2)}
+                label={null}
+                onClick={async event => {
+                  const $steps = {};
+                  $steps["goToAbout"] = true
+                    ? (() => {
+                        const actionArgs = { destination: `/about` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            location.assign(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToAbout"] != null &&
+                    typeof $steps["goToAbout"] === "object" &&
+                    typeof $steps["goToAbout"].then === "function"
+                  ) {
+                    $steps["goToAbout"] = await $steps["goToAbout"];
+                  }
+                }}
+              />
+
               <div
                 data-plasmic-name={"_89024731492"}
                 data-plasmic-override={overrides._89024731492}
@@ -1517,13 +1828,18 @@ const PlasmicDescendants = {
     "figmaPaste",
     "header2",
     "header",
+    "freeBox",
     "rightPanel",
+    "toProfile",
+    "toCart",
     "logoText1",
     "region",
     "\u0440\u0435\u0433\u0438\u043e\u043d\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0438",
-    "\u0433\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a",
+    "citySelector",
     "search",
     "rectangle1",
+    "searchField",
+    "searchButton",
     "rectangle2",
     "hits",
     "item1",
@@ -1564,9 +1880,10 @@ const PlasmicDescendants = {
     "rectangle538",
     "image17",
     "item52",
+    "button",
     "rectangle15",
-    "rectangle539",
     "image18",
+    "rectangle539",
     "showMore",
     "loyaltyClub",
     "rectangle17",
@@ -1574,7 +1891,7 @@ const PlasmicDescendants = {
     "rassilka",
     "rectangle19",
     "send1",
-    "rectangle20",
+    "mailField",
     "advert",
     "advert1",
     "rectangle540",
@@ -1588,6 +1905,8 @@ const PlasmicDescendants = {
     "telegram",
     "rectangle544",
     "\u0432\u041d\u0430\u0448\u0438\u0445\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445",
+    "toAboutButton",
+    "toAboutButton2",
     "_89024731492"
   ],
 
@@ -1595,13 +1914,18 @@ const PlasmicDescendants = {
     "figmaPaste",
     "header2",
     "header",
+    "freeBox",
     "rightPanel",
+    "toProfile",
+    "toCart",
     "logoText1",
     "region",
     "\u0440\u0435\u0433\u0438\u043e\u043d\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0438",
-    "\u0433\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a",
+    "citySelector",
     "search",
     "rectangle1",
+    "searchField",
+    "searchButton",
     "rectangle2",
     "hits",
     "item1",
@@ -1642,9 +1966,10 @@ const PlasmicDescendants = {
     "rectangle538",
     "image17",
     "item52",
+    "button",
     "rectangle15",
-    "rectangle539",
     "image18",
+    "rectangle539",
     "showMore",
     "loyaltyClub",
     "rectangle17",
@@ -1652,7 +1977,7 @@ const PlasmicDescendants = {
     "rassilka",
     "rectangle19",
     "send1",
-    "rectangle20",
+    "mailField",
     "advert",
     "advert1",
     "rectangle540",
@@ -1666,41 +1991,50 @@ const PlasmicDescendants = {
     "telegram",
     "rectangle544",
     "\u0432\u041d\u0430\u0448\u0438\u0445\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445",
+    "toAboutButton",
+    "toAboutButton2",
     "_89024731492"
   ],
 
   header2: [
     "header2",
     "header",
+    "freeBox",
     "rightPanel",
+    "toProfile",
+    "toCart",
     "logoText1",
     "region",
     "\u0440\u0435\u0433\u0438\u043e\u043d\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0438",
-    "\u0433\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a",
+    "citySelector",
     "search",
     "rectangle1",
+    "searchField",
+    "searchButton",
     "rectangle2"
   ],
 
   header: ["header"],
-  rightPanel: ["rightPanel"],
+  freeBox: ["freeBox"],
+  rightPanel: ["rightPanel", "toProfile", "toCart"],
+  toProfile: ["toProfile"],
+  toCart: ["toCart"],
   logoText1: ["logoText1"],
   region: [
     "region",
     "\u0440\u0435\u0433\u0438\u043e\u043d\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0438",
-    "\u0433\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a"
+    "citySelector"
   ],
 
   регионДоставки: [
     "\u0440\u0435\u0433\u0438\u043e\u043d\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0438"
   ],
 
-  гВладивосток: [
-    "\u0433\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a"
-  ],
-
-  search: ["search", "rectangle1", "rectangle2"],
+  citySelector: ["citySelector"],
+  search: ["search", "rectangle1", "searchField", "searchButton", "rectangle2"],
   rectangle1: ["rectangle1"],
+  searchField: ["searchField"],
+  searchButton: ["searchButton"],
   rectangle2: ["rectangle2"],
   hits: [
     "hits",
@@ -1765,9 +2099,10 @@ const PlasmicDescendants = {
     "rectangle538",
     "image17",
     "item52",
+    "button",
     "rectangle15",
-    "rectangle539",
     "image18",
+    "rectangle539",
     "showMore"
   ],
 
@@ -1787,18 +2122,19 @@ const PlasmicDescendants = {
   rectangle14: ["rectangle14"],
   rectangle538: ["rectangle538"],
   image17: ["image17"],
-  item52: ["item52", "rectangle15", "rectangle539", "image18"],
+  item52: ["item52", "button", "rectangle15", "image18", "rectangle539"],
+  button: ["button"],
   rectangle15: ["rectangle15"],
-  rectangle539: ["rectangle539"],
   image18: ["image18"],
+  rectangle539: ["rectangle539"],
   showMore: ["showMore"],
   loyaltyClub: ["loyaltyClub", "rectangle17", "clubButton"],
   rectangle17: ["rectangle17", "clubButton"],
   clubButton: ["clubButton"],
-  rassilka: ["rassilka", "rectangle19", "send1", "rectangle20"],
-  rectangle19: ["rectangle19", "send1"],
-  send1: ["send1"],
-  rectangle20: ["rectangle20"],
+  rassilka: ["rassilka", "rectangle19", "send1", "mailField"],
+  rectangle19: ["rectangle19", "send1", "mailField"],
+  send1: ["send1", "mailField"],
+  mailField: ["mailField"],
   advert: ["advert", "advert1", "rectangle540", "underHeader", "rectangle545"],
   advert1: ["advert1"],
   rectangle540: ["rectangle540"],
@@ -1813,6 +2149,8 @@ const PlasmicDescendants = {
     "telegram",
     "rectangle544",
     "\u0432\u041d\u0430\u0448\u0438\u0445\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445",
+    "toAboutButton",
+    "toAboutButton2",
     "_89024731492"
   ],
 
@@ -1833,6 +2171,8 @@ const PlasmicDescendants = {
     "\u0432\u041d\u0430\u0448\u0438\u0445\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445"
   ],
 
+  toAboutButton: ["toAboutButton"],
+  toAboutButton2: ["toAboutButton2"],
   _89024731492: ["_89024731492"]
 };
 
@@ -1871,17 +2211,20 @@ export const PlasmicHomepage = Object.assign(
     figmaPaste: makeNodeComponent("figmaPaste"),
     header2: makeNodeComponent("header2"),
     header: makeNodeComponent("header"),
+    freeBox: makeNodeComponent("freeBox"),
     rightPanel: makeNodeComponent("rightPanel"),
+    toProfile: makeNodeComponent("toProfile"),
+    toCart: makeNodeComponent("toCart"),
     logoText1: makeNodeComponent("logoText1"),
     region: makeNodeComponent("region"),
     регионДоставки: makeNodeComponent(
       "\u0440\u0435\u0433\u0438\u043e\u043d\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0438"
     ),
-    гВладивосток: makeNodeComponent(
-      "\u0433\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a"
-    ),
+    citySelector: makeNodeComponent("citySelector"),
     search: makeNodeComponent("search"),
     rectangle1: makeNodeComponent("rectangle1"),
+    searchField: makeNodeComponent("searchField"),
+    searchButton: makeNodeComponent("searchButton"),
     rectangle2: makeNodeComponent("rectangle2"),
     hits: makeNodeComponent("hits"),
     item1: makeNodeComponent("item1"),
@@ -1922,9 +2265,10 @@ export const PlasmicHomepage = Object.assign(
     rectangle538: makeNodeComponent("rectangle538"),
     image17: makeNodeComponent("image17"),
     item52: makeNodeComponent("item52"),
+    button: makeNodeComponent("button"),
     rectangle15: makeNodeComponent("rectangle15"),
-    rectangle539: makeNodeComponent("rectangle539"),
     image18: makeNodeComponent("image18"),
+    rectangle539: makeNodeComponent("rectangle539"),
     showMore: makeNodeComponent("showMore"),
     loyaltyClub: makeNodeComponent("loyaltyClub"),
     rectangle17: makeNodeComponent("rectangle17"),
@@ -1932,7 +2276,7 @@ export const PlasmicHomepage = Object.assign(
     rassilka: makeNodeComponent("rassilka"),
     rectangle19: makeNodeComponent("rectangle19"),
     send1: makeNodeComponent("send1"),
-    rectangle20: makeNodeComponent("rectangle20"),
+    mailField: makeNodeComponent("mailField"),
     advert: makeNodeComponent("advert"),
     advert1: makeNodeComponent("advert1"),
     rectangle540: makeNodeComponent("rectangle540"),
@@ -1953,6 +2297,8 @@ export const PlasmicHomepage = Object.assign(
     вНашихМагазинах: makeNodeComponent(
       "\u0432\u041d\u0430\u0448\u0438\u0445\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445"
     ),
+    toAboutButton: makeNodeComponent("toAboutButton"),
+    toAboutButton2: makeNodeComponent("toAboutButton2"),
     _89024731492: makeNodeComponent("_89024731492"),
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
