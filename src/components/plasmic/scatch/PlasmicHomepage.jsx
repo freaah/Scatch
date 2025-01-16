@@ -148,6 +148,104 @@ function PlasmicHomepage__RenderFunc(props) {
                   className={classNames(projectcss.all, sty.svg__vQ3L6)}
                   role={"img"}
                 />
+
+                <div
+                  data-plasmic-name={"rightPanel"}
+                  data-plasmic-override={overrides.rightPanel}
+                  className={classNames(projectcss.all, sty.rightPanel)}
+                >
+                  <HeartIcon
+                    className={classNames(projectcss.all, sty.svg__d4XEg)}
+                    role={"img"}
+                  />
+
+                  <CartIcon
+                    className={classNames(projectcss.all, sty.svg__mDDN)}
+                    role={"img"}
+                  />
+
+                  <ProfileIcon
+                    className={classNames(projectcss.all, sty.svg__edJl)}
+                    role={"img"}
+                  />
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___7OjtX
+                    )}
+                  >
+                    {
+                      "\u041f\u0440\u043e\u0444\u0438\u043b\u044c                 \u041a\u043e\u0440\u0437\u0438\u043d\u0430                \u0418\u0437\u0431\u0440\u0430\u043d\u043d\u043e\u0435"
+                    }
+                  </div>
+                  <Button
+                    data-plasmic-name={"toProfile"}
+                    data-plasmic-override={overrides.toProfile}
+                    className={classNames("__wab_instance", sty.toProfile)}
+                    onClick={async event => {
+                      const $steps = {};
+                      $steps["goToProfile"] = true
+                        ? (() => {
+                            const actionArgs = { destination: `/profile` };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                location.assign(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goToProfile"] != null &&
+                        typeof $steps["goToProfile"] === "object" &&
+                        typeof $steps["goToProfile"].then === "function"
+                      ) {
+                        $steps["goToProfile"] = await $steps["goToProfile"];
+                      }
+                    }}
+                  />
+
+                  <Button
+                    data-plasmic-name={"toCart"}
+                    data-plasmic-override={overrides.toCart}
+                    className={classNames("__wab_instance", sty.toCart)}
+                    onClick={async event => {
+                      const $steps = {};
+                      $steps["goToCart"] = true
+                        ? (() => {
+                            const actionArgs = { destination: `/cart` };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                location.assign(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goToCart"] != null &&
+                        typeof $steps["goToCart"] === "object" &&
+                        typeof $steps["goToCart"].then === "function"
+                      ) {
+                        $steps["goToCart"] = await $steps["goToCart"];
+                      }
+                    }}
+                  />
+                </div>
               </div>
               <div
                 data-plasmic-name={"freeBox"}
@@ -156,106 +254,44 @@ function PlasmicHomepage__RenderFunc(props) {
               />
 
               <div
-                data-plasmic-name={"rightPanel"}
-                data-plasmic-override={overrides.rightPanel}
-                className={classNames(projectcss.all, sty.rightPanel)}
-              >
-                <HeartIcon
-                  className={classNames(projectcss.all, sty.svg__d4XEg)}
-                  role={"img"}
-                />
-
-                <CartIcon
-                  className={classNames(projectcss.all, sty.svg__mDDN)}
-                  role={"img"}
-                />
-
-                <ProfileIcon
-                  className={classNames(projectcss.all, sty.svg__edJl)}
-                  role={"img"}
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___7OjtX
-                  )}
-                >
-                  {
-                    "\u041f\u0440\u043e\u0444\u0438\u043b\u044c                 \u041a\u043e\u0440\u0437\u0438\u043d\u0430                \u0418\u0437\u0431\u0440\u0430\u043d\u043d\u043e\u0435"
-                  }
-                </div>
-                <Button
-                  data-plasmic-name={"toProfile"}
-                  data-plasmic-override={overrides.toProfile}
-                  className={classNames("__wab_instance", sty.toProfile)}
-                  onClick={async event => {
-                    const $steps = {};
-                    $steps["goToProfile"] = true
-                      ? (() => {
-                          const actionArgs = { destination: `/profile` };
-                          return (({ destination }) => {
-                            if (
-                              typeof destination === "string" &&
-                              destination.startsWith("#")
-                            ) {
-                              document
-                                .getElementById(destination.substr(1))
-                                .scrollIntoView({ behavior: "smooth" });
-                            } else {
-                              location.assign(destination);
-                            }
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["goToProfile"] != null &&
-                      typeof $steps["goToProfile"] === "object" &&
-                      typeof $steps["goToProfile"].then === "function"
-                    ) {
-                      $steps["goToProfile"] = await $steps["goToProfile"];
-                    }
-                  }}
-                />
-
-                <Button
-                  data-plasmic-name={"toCart"}
-                  data-plasmic-override={overrides.toCart}
-                  className={classNames("__wab_instance", sty.toCart)}
-                  onClick={async event => {
-                    const $steps = {};
-                    $steps["goToCart"] = true
-                      ? (() => {
-                          const actionArgs = { destination: `/cart` };
-                          return (({ destination }) => {
-                            if (
-                              typeof destination === "string" &&
-                              destination.startsWith("#")
-                            ) {
-                              document
-                                .getElementById(destination.substr(1))
-                                .scrollIntoView({ behavior: "smooth" });
-                            } else {
-                              location.assign(destination);
-                            }
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["goToCart"] != null &&
-                      typeof $steps["goToCart"] === "object" &&
-                      typeof $steps["goToCart"].then === "function"
-                    ) {
-                      $steps["goToCart"] = await $steps["goToCart"];
-                    }
-                  }}
-                />
-              </div>
-              <div
                 data-plasmic-name={"logoText1"}
                 data-plasmic-override={overrides.logoText1}
                 className={classNames(projectcss.all, sty.logoText1)}
+              />
+
+              <Button
+                data-plasmic-name={"homeButton"}
+                data-plasmic-override={overrides.homeButton}
+                className={classNames("__wab_instance", sty.homeButton)}
+                label={null}
+                onClick={async event => {
+                  const $steps = {};
+                  $steps["goToPage"] = true
+                    ? (() => {
+                        const actionArgs = {};
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            location.assign(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToPage"] != null &&
+                    typeof $steps["goToPage"] === "object" &&
+                    typeof $steps["goToPage"].then === "function"
+                  ) {
+                    $steps["goToPage"] = await $steps["goToPage"];
+                  }
+                }}
+                roundedFull={true}
               />
 
               <div
@@ -436,49 +472,74 @@ function PlasmicHomepage__RenderFunc(props) {
                   showLabel={false}
                 />
 
-                <Button
-                  data-plasmic-name={"searchButton"}
-                  data-plasmic-override={overrides.searchButton}
-                  className={classNames("__wab_instance", sty.searchButton)}
-                  label={null}
-                  onClick={async event => {
-                    const $steps = {};
-                    $steps["goToPage"] = true
-                      ? (() => {
-                          const actionArgs = {};
-                          return (({ destination }) => {
-                            if (
-                              typeof destination === "string" &&
-                              destination.startsWith("#")
-                            ) {
-                              document
-                                .getElementById(destination.substr(1))
-                                .scrollIntoView({ behavior: "smooth" });
-                            } else {
-                              location.assign(destination);
-                            }
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["goToPage"] != null &&
-                      typeof $steps["goToPage"] === "object" &&
-                      typeof $steps["goToPage"].then === "function"
-                    ) {
-                      $steps["goToPage"] = await $steps["goToPage"];
-                    }
-                  }}
-                  roundedFull={true}
-                />
-
                 <div
                   data-plasmic-name={"rectangle2"}
                   data-plasmic-override={overrides.rectangle2}
                   className={classNames(projectcss.all, sty.rectangle2)}
+                  onClick={async event => {
+                    const $steps = {};
+                    $steps["updateStateVariable"] = true
+                      ? (() => {
+                          const actionArgs = { operation: 0 };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateStateVariable"] != null &&
+                      typeof $steps["updateStateVariable"] === "object" &&
+                      typeof $steps["updateStateVariable"].then === "function"
+                    ) {
+                      $steps["updateStateVariable"] = await $steps[
+                        "updateStateVariable"
+                      ];
+                    }
+                  }}
                 />
 
                 <SearchIcon
                   className={classNames(projectcss.all, sty.svg__vhDRa)}
+                  onClick={async event => {
+                    const $steps = {};
+                    $steps["updateStateVariable"] = true
+                      ? (() => {
+                          const actionArgs = { operation: 0 };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateStateVariable"] != null &&
+                      typeof $steps["updateStateVariable"] === "object" &&
+                      typeof $steps["updateStateVariable"].then === "function"
+                    ) {
+                      $steps["updateStateVariable"] = await $steps[
+                        "updateStateVariable"
+                      ];
+                    }
+                  }}
                   role={"img"}
                 />
               </div>
@@ -1035,57 +1096,80 @@ function PlasmicHomepage__RenderFunc(props) {
                 data-plasmic-override={overrides.item52}
                 className={classNames(projectcss.all, sty.item52)}
               >
-                <Button
-                  data-plasmic-name={"button"}
-                  data-plasmic-override={overrides.button}
-                  className={classNames("__wab_instance", sty.button)}
-                  label={null}
-                  onClick={async event => {
-                    const $steps = {};
-                    $steps["updateCity"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["city"]
-                            },
-                            operation: 0
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateCity"] != null &&
-                      typeof $steps["updateCity"] === "object" &&
-                      typeof $steps["updateCity"].then === "function"
-                    ) {
-                      $steps["updateCity"] = await $steps["updateCity"];
-                    }
-                  }}
-                />
-
                 <div
                   data-plasmic-name={"rectangle15"}
                   data-plasmic-override={overrides.rectangle15}
                   className={classNames(projectcss.all, sty.rectangle15)}
+                  onClick={async event => {
+                    const $steps = {};
+                    $steps["goToLineykaPlastikovayaAttacheEconomy"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            destination: `/lineyka-plastikovaya-attache-economy`
+                          };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              location.assign(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToLineykaPlastikovayaAttacheEconomy"] != null &&
+                      typeof $steps["goToLineykaPlastikovayaAttacheEconomy"] ===
+                        "object" &&
+                      typeof $steps["goToLineykaPlastikovayaAttacheEconomy"]
+                        .then === "function"
+                    ) {
+                      $steps["goToLineykaPlastikovayaAttacheEconomy"] =
+                        await $steps["goToLineykaPlastikovayaAttacheEconomy"];
+                    }
+                  }}
                 />
 
                 <div
                   data-plasmic-name={"image18"}
                   data-plasmic-override={overrides.image18}
                   className={classNames(projectcss.all, sty.image18)}
+                  onClick={async event => {
+                    const $steps = {};
+                    $steps["goToLineykaPlastikovayaAttacheEconomy"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            destination: `/lineyka-plastikovaya-attache-economy`
+                          };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              location.assign(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToLineykaPlastikovayaAttacheEconomy"] != null &&
+                      typeof $steps["goToLineykaPlastikovayaAttacheEconomy"] ===
+                        "object" &&
+                      typeof $steps["goToLineykaPlastikovayaAttacheEconomy"]
+                        .then === "function"
+                    ) {
+                      $steps["goToLineykaPlastikovayaAttacheEconomy"] =
+                        await $steps["goToLineykaPlastikovayaAttacheEconomy"];
+                    }
+                  }}
                 />
 
                 <div
@@ -1100,6 +1184,38 @@ function PlasmicHomepage__RenderFunc(props) {
                     projectcss.__wab_text,
                     sty.text__zQFwf
                   )}
+                  onClick={async event => {
+                    const $steps = {};
+                    $steps["goToLineykaPlastikovayaAttacheEconomy"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            destination: `/lineyka-plastikovaya-attache-economy`
+                          };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              location.assign(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToLineykaPlastikovayaAttacheEconomy"] != null &&
+                      typeof $steps["goToLineykaPlastikovayaAttacheEconomy"] ===
+                        "object" &&
+                      typeof $steps["goToLineykaPlastikovayaAttacheEconomy"]
+                        .then === "function"
+                    ) {
+                      $steps["goToLineykaPlastikovayaAttacheEconomy"] =
+                        await $steps["goToLineykaPlastikovayaAttacheEconomy"];
+                    }
+                  }}
                 >
                   {"Attache\u00a0Economy, 30 \u0441\u043c"}
                 </div>
@@ -1109,6 +1225,38 @@ function PlasmicHomepage__RenderFunc(props) {
                     projectcss.__wab_text,
                     sty.text__eAw5K
                   )}
+                  onClick={async event => {
+                    const $steps = {};
+                    $steps["goToLineykaPlastikovayaAttacheEconomy"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            destination: `/lineyka-plastikovaya-attache-economy`
+                          };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              location.assign(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToLineykaPlastikovayaAttacheEconomy"] != null &&
+                      typeof $steps["goToLineykaPlastikovayaAttacheEconomy"] ===
+                        "object" &&
+                      typeof $steps["goToLineykaPlastikovayaAttacheEconomy"]
+                        .then === "function"
+                    ) {
+                      $steps["goToLineykaPlastikovayaAttacheEconomy"] =
+                        await $steps["goToLineykaPlastikovayaAttacheEconomy"];
+                    }
+                  }}
                 >
                   {
                     "\u041b\u0438\u043d\u0435\u0439\u043a\u0430\n\u043f\u043b\u0430\u0441\u0442\u0438\u043a\u043e\u0432\u0430\u044f"
@@ -1120,6 +1268,38 @@ function PlasmicHomepage__RenderFunc(props) {
                     projectcss.__wab_text,
                     sty.text__zC3X
                   )}
+                  onClick={async event => {
+                    const $steps = {};
+                    $steps["goToLineykaPlastikovayaAttacheEconomy"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            destination: `/lineyka-plastikovaya-attache-economy`
+                          };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              location.assign(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToLineykaPlastikovayaAttacheEconomy"] != null &&
+                      typeof $steps["goToLineykaPlastikovayaAttacheEconomy"] ===
+                        "object" &&
+                      typeof $steps["goToLineykaPlastikovayaAttacheEconomy"]
+                        .then === "function"
+                    ) {
+                      $steps["goToLineykaPlastikovayaAttacheEconomy"] =
+                        await $steps["goToLineykaPlastikovayaAttacheEconomy"];
+                    }
+                  }}
                 >
                   {"32 \u20bd"}
                 </div>
@@ -1334,9 +1514,15 @@ function PlasmicHomepage__RenderFunc(props) {
                     className={classNames(projectcss.all, sty.svg__cNMl)}
                     onClick={async event => {
                       const $steps = {};
-                      $steps["updateStateVariable"] = true
+                      $steps["updateCity"] = true
                         ? (() => {
-                            const actionArgs = {};
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["city"]
+                              },
+                              operation: 0
+                            };
                             return (({
                               variable,
                               value,
@@ -1347,18 +1533,17 @@ function PlasmicHomepage__RenderFunc(props) {
                                 return;
                               }
                               const { objRoot, variablePath } = variable;
-                              undefined;
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
                             })?.apply(null, [actionArgs]);
                           })()
                         : undefined;
                       if (
-                        $steps["updateStateVariable"] != null &&
-                        typeof $steps["updateStateVariable"] === "object" &&
-                        typeof $steps["updateStateVariable"].then === "function"
+                        $steps["updateCity"] != null &&
+                        typeof $steps["updateCity"] === "object" &&
+                        typeof $steps["updateCity"].then === "function"
                       ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
+                        $steps["updateCity"] = await $steps["updateCity"];
                       }
                     }}
                     role={"img"}
@@ -1443,10 +1628,78 @@ function PlasmicHomepage__RenderFunc(props) {
                 data-plasmic-name={"rectangle540"}
                 data-plasmic-override={overrides.rectangle540}
                 className={classNames(projectcss.all, sty.rectangle540)}
+                onClick={async event => {
+                  const $steps = {};
+                  $steps["updateCity"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["city"]
+                          },
+                          operation: 0
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateCity"] != null &&
+                    typeof $steps["updateCity"] === "object" &&
+                    typeof $steps["updateCity"].then === "function"
+                  ) {
+                    $steps["updateCity"] = await $steps["updateCity"];
+                  }
+                }}
               />
 
               <ArrowRightIcon
                 className={classNames(projectcss.all, sty.svg__vqBrC)}
+                onClick={async event => {
+                  const $steps = {};
+                  $steps["updateCity"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["city"]
+                          },
+                          operation: 0
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateCity"] != null &&
+                    typeof $steps["updateCity"] === "object" &&
+                    typeof $steps["updateCity"].then === "function"
+                  ) {
+                    $steps["updateCity"] = await $steps["updateCity"];
+                  }
+                }}
                 role={"img"}
               />
 
@@ -1456,26 +1709,196 @@ function PlasmicHomepage__RenderFunc(props) {
                   projectcss.__wab_text,
                   sty.text__fk07G
                 )}
+                onClick={async event => {
+                  const $steps = {};
+                  $steps["updateCity"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["city"]
+                          },
+                          operation: 0
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateCity"] != null &&
+                    typeof $steps["updateCity"] === "object" &&
+                    typeof $steps["updateCity"].then === "function"
+                  ) {
+                    $steps["updateCity"] = await $steps["updateCity"];
+                  }
+                }}
               >
                 {"\u041f\u041e\u0414\u0420\u041e\u0411\u041d\u0415\u0415"}
               </div>
               <Ellipse9Icon
                 className={classNames(projectcss.all, sty.svg___4AZd3)}
+                onClick={async event => {
+                  const $steps = {};
+                  $steps["updateCity"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["city"]
+                          },
+                          operation: 0
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateCity"] != null &&
+                    typeof $steps["updateCity"] === "object" &&
+                    typeof $steps["updateCity"].then === "function"
+                  ) {
+                    $steps["updateCity"] = await $steps["updateCity"];
+                  }
+                }}
                 role={"img"}
               />
 
               <Ellipse9Icon
                 className={classNames(projectcss.all, sty.svg__ynEaP)}
+                onClick={async event => {
+                  const $steps = {};
+                  $steps["updateCity"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["city"]
+                          },
+                          operation: 0
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateCity"] != null &&
+                    typeof $steps["updateCity"] === "object" &&
+                    typeof $steps["updateCity"].then === "function"
+                  ) {
+                    $steps["updateCity"] = await $steps["updateCity"];
+                  }
+                }}
                 role={"img"}
               />
 
               <ArrowBackIcon
                 className={classNames(projectcss.all, sty.svg___0PqKe)}
+                onClick={async event => {
+                  const $steps = {};
+                  $steps["updateCity"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["city"]
+                          },
+                          operation: 0
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateCity"] != null &&
+                    typeof $steps["updateCity"] === "object" &&
+                    typeof $steps["updateCity"].then === "function"
+                  ) {
+                    $steps["updateCity"] = await $steps["updateCity"];
+                  }
+                }}
                 role={"img"}
               />
 
               <ArrowBackIcon
                 className={classNames(projectcss.all, sty.svg__aHWg7)}
+                onClick={async event => {
+                  const $steps = {};
+                  $steps["updateCity"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["city"]
+                          },
+                          operation: 0
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateCity"] != null &&
+                    typeof $steps["updateCity"] === "object" &&
+                    typeof $steps["updateCity"].then === "function"
+                  ) {
+                    $steps["updateCity"] = await $steps["updateCity"];
+                  }
+                }}
                 role={"img"}
               />
 
@@ -1551,6 +1974,33 @@ function PlasmicHomepage__RenderFunc(props) {
                   projectcss.__wab_text,
                   sty.text__de8Hn
                 )}
+                onClick={async event => {
+                  const $steps = {};
+                  $steps["goToQa"] = true
+                    ? (() => {
+                        const actionArgs = { destination: `/qa` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            location.assign(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToQa"] != null &&
+                    typeof $steps["goToQa"] === "object" &&
+                    typeof $steps["goToQa"].then === "function"
+                  ) {
+                    $steps["goToQa"] = await $steps["goToQa"];
+                  }
+                }}
               >
                 {
                   "\u0412\u043e\u043f\u0440\u043e\u0441\u044b \u0438 \u043e\u0442\u0432\u0435\u0442\u044b"
@@ -1689,57 +2139,6 @@ function PlasmicHomepage__RenderFunc(props) {
                   projectcss.__wab_text,
                   sty.text__bBhN
                 )}
-              >
-                {"\u041e \u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0438"}
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__trubp
-                )}
-              >
-                {"\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b"}
-              </div>
-              <Button
-                data-plasmic-name={"toAboutButton"}
-                data-plasmic-override={overrides.toAboutButton}
-                className={classNames("__wab_instance", sty.toAboutButton)}
-                label={null}
-                onClick={async event => {
-                  const $steps = {};
-                  $steps["goToQa"] = true
-                    ? (() => {
-                        const actionArgs = { destination: `/qa` };
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
-                          } else {
-                            location.assign(destination);
-                          }
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["goToQa"] != null &&
-                    typeof $steps["goToQa"] === "object" &&
-                    typeof $steps["goToQa"].then === "function"
-                  ) {
-                    $steps["goToQa"] = await $steps["goToQa"];
-                  }
-                }}
-              />
-
-              <Button
-                data-plasmic-name={"toAboutButton2"}
-                data-plasmic-override={overrides.toAboutButton2}
-                className={classNames("__wab_instance", sty.toAboutButton2)}
-                label={null}
                 onClick={async event => {
                   const $steps = {};
                   $steps["goToAbout"] = true
@@ -1767,8 +2166,18 @@ function PlasmicHomepage__RenderFunc(props) {
                     $steps["goToAbout"] = await $steps["goToAbout"];
                   }
                 }}
-              />
-
+              >
+                {"\u041e \u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0438"}
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__trubp
+                )}
+              >
+                {"\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b"}
+              </div>
               <div
                 data-plasmic-name={"_89024731492"}
                 data-plasmic-override={overrides._89024731492}
@@ -1828,18 +2237,18 @@ const PlasmicDescendants = {
     "figmaPaste",
     "header2",
     "header",
-    "freeBox",
     "rightPanel",
     "toProfile",
     "toCart",
+    "freeBox",
     "logoText1",
+    "homeButton",
     "region",
     "\u0440\u0435\u0433\u0438\u043e\u043d\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0438",
     "citySelector",
     "search",
     "rectangle1",
     "searchField",
-    "searchButton",
     "rectangle2",
     "hits",
     "item1",
@@ -1880,7 +2289,6 @@ const PlasmicDescendants = {
     "rectangle538",
     "image17",
     "item52",
-    "button",
     "rectangle15",
     "image18",
     "rectangle539",
@@ -1905,8 +2313,6 @@ const PlasmicDescendants = {
     "telegram",
     "rectangle544",
     "\u0432\u041d\u0430\u0448\u0438\u0445\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445",
-    "toAboutButton",
-    "toAboutButton2",
     "_89024731492"
   ],
 
@@ -1914,18 +2320,18 @@ const PlasmicDescendants = {
     "figmaPaste",
     "header2",
     "header",
-    "freeBox",
     "rightPanel",
     "toProfile",
     "toCart",
+    "freeBox",
     "logoText1",
+    "homeButton",
     "region",
     "\u0440\u0435\u0433\u0438\u043e\u043d\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0438",
     "citySelector",
     "search",
     "rectangle1",
     "searchField",
-    "searchButton",
     "rectangle2",
     "hits",
     "item1",
@@ -1966,7 +2372,6 @@ const PlasmicDescendants = {
     "rectangle538",
     "image17",
     "item52",
-    "button",
     "rectangle15",
     "image18",
     "rectangle539",
@@ -1991,35 +2396,34 @@ const PlasmicDescendants = {
     "telegram",
     "rectangle544",
     "\u0432\u041d\u0430\u0448\u0438\u0445\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445",
-    "toAboutButton",
-    "toAboutButton2",
     "_89024731492"
   ],
 
   header2: [
     "header2",
     "header",
-    "freeBox",
     "rightPanel",
     "toProfile",
     "toCart",
+    "freeBox",
     "logoText1",
+    "homeButton",
     "region",
     "\u0440\u0435\u0433\u0438\u043e\u043d\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0438",
     "citySelector",
     "search",
     "rectangle1",
     "searchField",
-    "searchButton",
     "rectangle2"
   ],
 
-  header: ["header"],
-  freeBox: ["freeBox"],
+  header: ["header", "rightPanel", "toProfile", "toCart"],
   rightPanel: ["rightPanel", "toProfile", "toCart"],
   toProfile: ["toProfile"],
   toCart: ["toCart"],
+  freeBox: ["freeBox"],
   logoText1: ["logoText1"],
+  homeButton: ["homeButton"],
   region: [
     "region",
     "\u0440\u0435\u0433\u0438\u043e\u043d\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0438",
@@ -2031,10 +2435,9 @@ const PlasmicDescendants = {
   ],
 
   citySelector: ["citySelector"],
-  search: ["search", "rectangle1", "searchField", "searchButton", "rectangle2"],
+  search: ["search", "rectangle1", "searchField", "rectangle2"],
   rectangle1: ["rectangle1"],
   searchField: ["searchField"],
-  searchButton: ["searchButton"],
   rectangle2: ["rectangle2"],
   hits: [
     "hits",
@@ -2099,7 +2502,6 @@ const PlasmicDescendants = {
     "rectangle538",
     "image17",
     "item52",
-    "button",
     "rectangle15",
     "image18",
     "rectangle539",
@@ -2122,8 +2524,7 @@ const PlasmicDescendants = {
   rectangle14: ["rectangle14"],
   rectangle538: ["rectangle538"],
   image17: ["image17"],
-  item52: ["item52", "button", "rectangle15", "image18", "rectangle539"],
-  button: ["button"],
+  item52: ["item52", "rectangle15", "image18", "rectangle539"],
   rectangle15: ["rectangle15"],
   image18: ["image18"],
   rectangle539: ["rectangle539"],
@@ -2149,8 +2550,6 @@ const PlasmicDescendants = {
     "telegram",
     "rectangle544",
     "\u0432\u041d\u0430\u0448\u0438\u0445\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445",
-    "toAboutButton",
-    "toAboutButton2",
     "_89024731492"
   ],
 
@@ -2171,8 +2570,6 @@ const PlasmicDescendants = {
     "\u0432\u041d\u0430\u0448\u0438\u0445\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445"
   ],
 
-  toAboutButton: ["toAboutButton"],
-  toAboutButton2: ["toAboutButton2"],
   _89024731492: ["_89024731492"]
 };
 
@@ -2211,11 +2608,12 @@ export const PlasmicHomepage = Object.assign(
     figmaPaste: makeNodeComponent("figmaPaste"),
     header2: makeNodeComponent("header2"),
     header: makeNodeComponent("header"),
-    freeBox: makeNodeComponent("freeBox"),
     rightPanel: makeNodeComponent("rightPanel"),
     toProfile: makeNodeComponent("toProfile"),
     toCart: makeNodeComponent("toCart"),
+    freeBox: makeNodeComponent("freeBox"),
     logoText1: makeNodeComponent("logoText1"),
+    homeButton: makeNodeComponent("homeButton"),
     region: makeNodeComponent("region"),
     регионДоставки: makeNodeComponent(
       "\u0440\u0435\u0433\u0438\u043e\u043d\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0438"
@@ -2224,7 +2622,6 @@ export const PlasmicHomepage = Object.assign(
     search: makeNodeComponent("search"),
     rectangle1: makeNodeComponent("rectangle1"),
     searchField: makeNodeComponent("searchField"),
-    searchButton: makeNodeComponent("searchButton"),
     rectangle2: makeNodeComponent("rectangle2"),
     hits: makeNodeComponent("hits"),
     item1: makeNodeComponent("item1"),
@@ -2265,7 +2662,6 @@ export const PlasmicHomepage = Object.assign(
     rectangle538: makeNodeComponent("rectangle538"),
     image17: makeNodeComponent("image17"),
     item52: makeNodeComponent("item52"),
-    button: makeNodeComponent("button"),
     rectangle15: makeNodeComponent("rectangle15"),
     image18: makeNodeComponent("image18"),
     rectangle539: makeNodeComponent("rectangle539"),
@@ -2297,8 +2693,6 @@ export const PlasmicHomepage = Object.assign(
     вНашихМагазинах: makeNodeComponent(
       "\u0432\u041d\u0430\u0448\u0438\u0445\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445"
     ),
-    toAboutButton: makeNodeComponent("toAboutButton"),
-    toAboutButton2: makeNodeComponent("toAboutButton2"),
     _89024731492: makeNodeComponent("_89024731492"),
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
