@@ -536,9 +536,9 @@ function PlasmicAbout__RenderFunc(props) {
               label={null}
               onClick={async event => {
                 const $steps = {};
-                $steps["goToPage"] = true
+                $steps["goToHomepage"] = true
                   ? (() => {
-                      const actionArgs = {};
+                      const actionArgs = { destination: `/` };
                       return (({ destination }) => {
                         if (
                           typeof destination === "string" &&
@@ -554,11 +554,11 @@ function PlasmicAbout__RenderFunc(props) {
                     })()
                   : undefined;
                 if (
-                  $steps["goToPage"] != null &&
-                  typeof $steps["goToPage"] === "object" &&
-                  typeof $steps["goToPage"].then === "function"
+                  $steps["goToHomepage"] != null &&
+                  typeof $steps["goToHomepage"] === "object" &&
+                  typeof $steps["goToHomepage"].then === "function"
                 ) {
-                  $steps["goToPage"] = await $steps["goToPage"];
+                  $steps["goToHomepage"] = await $steps["goToHomepage"];
                 }
               }}
               roundedFull={true}
