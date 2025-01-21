@@ -380,13 +380,13 @@
   width: 1152px;
 }
 .logoText2 {
-  background: url("./images/logoText2.png") center center / cover no-repeat;
+  background: url("./images/logoText1.png") center center / cover no-repeat;
   width: 662px;
   height: 662px;
   display: block;
   position: absolute;
-  top: 372px;
-  left: 1173px;
+  top: 370px;
+  left: 1170px;
 }
 .text__vzQ8F {
   display: block;
@@ -528,7 +528,7 @@
   padding: 8px;
 }
 .logoText1 {
-  background: url("./images/logoText2.png") 0px -33px / 291px 291px no-repeat;
+  background: url("./images/logoText1.png") 0px -33px / 291px 291px no-repeat;
   width: 260px;
   height: 227px;
   display: block;
