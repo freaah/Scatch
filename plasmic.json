@@ -423,20 +423,6 @@
           "componentType": "component"
         },
         {
-          "id": "5kBTZfShVyAc",
-          "name": "LineykaPlastikovayaAttacheEconomy",
-          "type": "managed",
-          "projectId": "pwPQehv5dRCmck24osLGTw",
-          "renderModuleFilePath": "plasmic/scatch/PlasmicLineykaPlastikovayaAttacheEconomy.jsx",
-          "importSpec": {
-            "modulePath": "LineykaPlastikovayaAttacheEconomy.jsx"
-          },
-          "cssFilePath": "plasmic/scatch/PlasmicLineykaPlastikovayaAttacheEconomy.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/lineyka-plastikovaya-attache-economy"
-        },
-        {
           "id": "pSDWCYbKxqQn",
           "name": "Qa",
           "type": "managed",
@@ -463,6 +449,34 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/about"
+        },
+        {
+          "id": "UwnSTvhE3eHY",
+          "name": "Favorites",
+          "type": "managed",
+          "projectId": "pwPQehv5dRCmck24osLGTw",
+          "renderModuleFilePath": "plasmic/scatch/PlasmicFavorites.jsx",
+          "importSpec": {
+            "modulePath": "Favorites.jsx"
+          },
+          "cssFilePath": "plasmic/scatch/PlasmicFavorites.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/favorites"
+        },
+        {
+          "id": "HOE7BqVAPmFF",
+          "name": "LineykaPlastikovayaAttacheEconomy",
+          "type": "managed",
+          "projectId": "pwPQehv5dRCmck24osLGTw",
+          "renderModuleFilePath": "plasmic/scatch/PlasmicLineykaPlastikovayaAttacheEconomy.jsx",
+          "importSpec": {
+            "modulePath": "LineykaPlastikovayaAttacheEconomy.jsx"
+          },
+          "cssFilePath": "plasmic/scatch/PlasmicLineykaPlastikovayaAttacheEconomy.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/lineyka-plastikovaya-attache-economy"
         }
       ],
       "icons": [
@@ -620,6 +634,81 @@
           "id": "R_-D1SJJ-SUd",
           "name": "ChevronDownIcon",
           "moduleFilePath": "plasmic/scatch/icons/PlasmicIcon__ChevronDown.jsx"
+        },
+        {
+          "id": "EgTr9wrqZhBY",
+          "name": "Line10Icon",
+          "moduleFilePath": "plasmic/scatch/icons/PlasmicIcon__Line10.jsx"
+        },
+        {
+          "id": "bF76gfwhshLY",
+          "name": "Line11Icon",
+          "moduleFilePath": "plasmic/scatch/icons/PlasmicIcon__Line11.jsx"
+        },
+        {
+          "id": "WA1QlspYQY8J",
+          "name": "TickIcon",
+          "moduleFilePath": "plasmic/scatch/icons/PlasmicIcon__Tick.jsx"
+        },
+        {
+          "id": "YW-uouk5AlLr",
+          "name": "Line7Icon",
+          "moduleFilePath": "plasmic/scatch/icons/PlasmicIcon__Line7.jsx"
+        },
+        {
+          "id": "c2NLA33Y0SXT",
+          "name": "Line9Icon",
+          "moduleFilePath": "plasmic/scatch/icons/PlasmicIcon__Line9.jsx"
+        },
+        {
+          "id": "liVNszQUlIsN",
+          "name": "Line16Icon",
+          "moduleFilePath": "plasmic/scatch/icons/PlasmicIcon__Line16.jsx"
+        },
+        {
+          "id": "EVakZXW9V2D4",
+          "name": "TrashIcon",
+          "moduleFilePath": "plasmic/scatch/icons/PlasmicIcon__Trash.jsx"
+        },
+        {
+          "id": "qhQEtJPnlMys",
+          "name": "Tick2Icon",
+          "moduleFilePath": "plasmic/scatch/icons/PlasmicIcon__Tick2.jsx"
+        },
+        {
+          "id": "WZFxP-z_0aZr",
+          "name": "NoteIcon",
+          "moduleFilePath": "plasmic/scatch/icons/PlasmicIcon__Note.jsx"
+        },
+        {
+          "id": "u29lU0Ao8Xpq",
+          "name": "Note2Icon",
+          "moduleFilePath": "plasmic/scatch/icons/PlasmicIcon__Note2.jsx"
+        },
+        {
+          "id": "0bZOr4fChSuJ",
+          "name": "Rectangle501Icon",
+          "moduleFilePath": "plasmic/scatch/icons/PlasmicIcon__Rectangle501.jsx"
+        },
+        {
+          "id": "VgL2nrjSMd51",
+          "name": "QualityIcon",
+          "moduleFilePath": "plasmic/scatch/icons/PlasmicIcon__Quality.jsx"
+        },
+        {
+          "id": "uTcrHxbRF4PH",
+          "name": "InvoiceIcon",
+          "moduleFilePath": "plasmic/scatch/icons/PlasmicIcon__Invoice.jsx"
+        },
+        {
+          "id": "C7dYtPKXKfMW",
+          "name": "PackageDeliveryIcon",
+          "moduleFilePath": "plasmic/scatch/icons/PlasmicIcon__PackageDelivery.jsx"
+        },
+        {
+          "id": "ESoR_jAkRrQO",
+          "name": "AccountIcon",
+          "moduleFilePath": "plasmic/scatch/icons/PlasmicIcon__Account.jsx"
         }
       ],
       "images": [
@@ -732,6 +821,36 @@
           "id": "H1ElReudrLvW",
           "name": "image 2",
           "filePath": "plasmic/scatch/images/image2.png"
+        },
+        {
+          "id": "Ww0QPFZSBsP6",
+          "name": "shop (1) 1",
+          "filePath": "plasmic/scatch/images/shop11.png"
+        },
+        {
+          "id": "RqFFtHfUR1DV",
+          "name": "location 3",
+          "filePath": "plasmic/scatch/images/location3.png"
+        },
+        {
+          "id": "7drZ2fEKLFNT",
+          "name": "delivery",
+          "filePath": "plasmic/scatch/images/delivery.png"
+        },
+        {
+          "id": "hklUZ7wezdJ6",
+          "name": "luna_ds 1",
+          "filePath": "plasmic/scatch/images/lunaDs1.png"
+        },
+        {
+          "id": "tHiQWEjFxnJ-",
+          "name": "qa 1",
+          "filePath": "plasmic/scatch/images/qa1.png"
+        },
+        {
+          "id": "yPzS4w-EpBU3",
+          "name": "log-out 1",
+          "filePath": "plasmic/scatch/images/logOut1.png"
         }
       ],
       "indirect": false,

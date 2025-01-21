@@ -18,7 +18,6 @@ import {
   useDollarState
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
-import Button from "../../Button"; // plasmic-import: YEbXEiVokJ6F/component
 import Select from "../../Select"; // plasmic-import: WDmcJsuYHVsc/component
 import MenuItem from "../../MenuItem"; // plasmic-import: SPPaFCfdP_1a/component
 import TextField from "../../TextField"; // plasmic-import: jHJkxpVOWWNk/component
@@ -92,8 +91,8 @@ function PlasmicAbout__RenderFunc(props) {
     <React.Fragment>
       <div className={projectcss.plasmic_page_wrapper}>
         <div
-          data-plasmic-name={"root"}
-          data-plasmic-override={overrides.root}
+          data-plasmic-name={"about"}
+          data-plasmic-override={overrides.about}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
@@ -102,7 +101,7 @@ function PlasmicAbout__RenderFunc(props) {
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
-            sty.root
+            sty.about
           )}
         >
           <div
@@ -405,6 +404,44 @@ function PlasmicAbout__RenderFunc(props) {
             />
           </div>
           <div
+            data-plasmic-name={"land"}
+            data-plasmic-override={overrides.land}
+            className={classNames(projectcss.all, sty.land)}
+          >
+            <div
+              data-plasmic-name={"rectangle447"}
+              data-plasmic-override={overrides.rectangle447}
+              className={classNames(projectcss.all, sty.rectangle447)}
+            />
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__xzByp
+              )}
+            >
+              {
+                "              \u2013 \u043d\u0435\u0431\u043e\u043b\u044c\u0448\u0430\u044f, \u043d\u043e \u043a\u0440\u0430\u0439\u043d\u0435 \u0430\u043c\u0431\u0438\u0446\u0438\u043e\u0437\u043d\u0430\u044f \u043a\u043e\u043c\u043f\u0430\u043d\u0438\u044f, \u043e\u0441\u043d\u043e\u0432\u0430\u043d\u043d\u0430\u044f \u0432 2024 \u0433\u043e\u0434\u0443 \u0432 \u0441\u0430\u043c\u043e\u043c \u0441\u0435\u0440\u0434\u0446\u0435 \u0414\u0430\u043b\u044c\u043d\u0435\u0433\u043e \u0412\u043e\u0441\u0442\u043e\u043a\u0430 - \u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a\u0435. \u0421\u0442\u0440\u0430\u0441\u0442\u044c \u043a \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0439 \u043a\u0430\u043d\u0446\u0435\u043b\u044f\u0440\u0438\u0438 \u0438 \u0441\u0442\u0440\u0435\u043c\u043b\u0435\u043d\u0438\u0435 \u0441\u0434\u0435\u043b\u0430\u0442\u044c \u0432\u0430\u0448 \u0440\u0430\u0431\u043e\u0447\u0438\u0439 \u043f\u0440\u043e\u0446\u0435\u0441\u0441 \u043d\u0430\u0438\u0431\u043e\u043b\u0435\u0435 \u0443\u0434\u043e\u0431\u043d\u044b\u043c \u0438 \u043f\u0440\u0438\u044f\u0442\u043d\u044b\u043c \u0441\u0442\u0430\u043b\u0438 \u043e\u0441\u043d\u043e\u0432\u043e\u0439 \u043d\u0430\u0448\u0435\u0433\u043e \u0431\u0438\u0437\u043d\u0435\u0441\u0430.\n\n\u041d\u0430\u0448\u0430 \u0433\u043b\u0430\u0432\u043d\u0430\u044f \u0446\u0435\u043b\u044c \u2013 \u043f\u0440\u0435\u0434\u043e\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u0432\u0430\u043c \u0448\u0438\u0440\u043e\u043a\u0438\u0439 \u0430\u0441\u0441\u043e\u0440\u0442\u0438\u043c\u0435\u043d\u0442 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0439 \u043a\u0430\u043d\u0446\u0435\u043b\u044f\u0440\u0438\u0438 \u043f\u043e \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b\u043c \u0446\u0435\u043d\u0430\u043c. \u041c\u044b \u0442\u0449\u0430\u0442\u0435\u043b\u044c\u043d\u043e \u043f\u043e\u0434\u0431\u0438\u0440\u0430\u0435\u043c \u0432\u0441\u0435 \u0442\u043e\u0432\u0430\u0440\u044b, \u0447\u0442\u043e\u0431\u044b \u0443\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u0438\u0442\u044c \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u0438 \u043a\u0430\u0436\u0434\u043e\u0433\u043e.\n\n\u041d\u0430\u0441 \u0432\u044b\u0431\u0438\u0440\u0430\u044e\u0442 \u0437\u0430 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0443\u044e \u043f\u0440\u043e\u0434\u0443\u043a\u0446\u0438\u044e, \u0443\u0434\u043e\u0431\u0441\u0442\u0432\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u0438 \u0431\u044b\u0441\u0442\u0440\u0443\u044e \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0443 \u043a\u0430\u043a \u0432 \u0433. \u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a, \u0442\u0430\u043a \u0438 \u043f\u043e \u0432\u0441\u0435\u0439 \u0420\u043e\u0441\u0441\u0438\u0438."
+              }
+            </div>
+            <div
+              data-plasmic-name={"logoText2"}
+              data-plasmic-override={overrides.logoText2}
+              className={classNames(projectcss.all, sty.logoText2)}
+            />
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__vzQ8F
+              )}
+            >
+              {"\u041e \u043d\u0430\u0441"}
+            </div>
+          </div>
+          <div
             data-plasmic-name={"header2"}
             data-plasmic-override={overrides.header2}
             className={classNames(projectcss.all, sty.header2)}
@@ -426,39 +463,11 @@ function PlasmicAbout__RenderFunc(props) {
               >
                 <HeartIcon
                   className={classNames(projectcss.all, sty.svg__wdxee)}
-                  role={"img"}
-                />
-
-                <CartIcon
-                  className={classNames(projectcss.all, sty.svg___6KwcX)}
-                  role={"img"}
-                />
-
-                <ProfileIcon
-                  className={classNames(projectcss.all, sty.svg__dAbBq)}
-                  role={"img"}
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___53TC
-                  )}
-                >
-                  {
-                    "\u041f\u0440\u043e\u0444\u0438\u043b\u044c                 \u041a\u043e\u0440\u0437\u0438\u043d\u0430                \u0418\u0437\u0431\u0440\u0430\u043d\u043d\u043e\u0435"
-                  }
-                </div>
-                <Button
-                  data-plasmic-name={"toProfile"}
-                  data-plasmic-override={overrides.toProfile}
-                  className={classNames("__wab_instance", sty.toProfile)}
                   onClick={async event => {
                     const $steps = {};
-                    $steps["goToProfile"] = true
+                    $steps["goToFavorites"] = true
                       ? (() => {
-                          const actionArgs = { destination: `/profile` };
+                          const actionArgs = { destination: `/favorites` };
                           return (({ destination }) => {
                             if (
                               typeof destination === "string" &&
@@ -474,19 +483,18 @@ function PlasmicAbout__RenderFunc(props) {
                         })()
                       : undefined;
                     if (
-                      $steps["goToProfile"] != null &&
-                      typeof $steps["goToProfile"] === "object" &&
-                      typeof $steps["goToProfile"].then === "function"
+                      $steps["goToFavorites"] != null &&
+                      typeof $steps["goToFavorites"] === "object" &&
+                      typeof $steps["goToFavorites"].then === "function"
                     ) {
-                      $steps["goToProfile"] = await $steps["goToProfile"];
+                      $steps["goToFavorites"] = await $steps["goToFavorites"];
                     }
                   }}
+                  role={"img"}
                 />
 
-                <Button
-                  data-plasmic-name={"toCart"}
-                  data-plasmic-override={overrides.toCart}
-                  className={classNames("__wab_instance", sty.toCart)}
+                <CartIcon
+                  className={classNames(projectcss.all, sty.svg___6KwcX)}
                   onClick={async event => {
                     const $steps = {};
                     $steps["goToCart"] = true
@@ -514,7 +522,149 @@ function PlasmicAbout__RenderFunc(props) {
                       $steps["goToCart"] = await $steps["goToCart"];
                     }
                   }}
+                  role={"img"}
                 />
+
+                <ProfileIcon
+                  className={classNames(projectcss.all, sty.svg__dAbBq)}
+                  onClick={async event => {
+                    const $steps = {};
+                    $steps["goToProfile"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/profile` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              location.assign(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToProfile"] != null &&
+                      typeof $steps["goToProfile"] === "object" &&
+                      typeof $steps["goToProfile"].then === "function"
+                    ) {
+                      $steps["goToProfile"] = await $steps["goToProfile"];
+                    }
+                  }}
+                  role={"img"}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___53TC
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+                    $steps["goToProfile"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/profile` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              location.assign(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToProfile"] != null &&
+                      typeof $steps["goToProfile"] === "object" &&
+                      typeof $steps["goToProfile"].then === "function"
+                    ) {
+                      $steps["goToProfile"] = await $steps["goToProfile"];
+                    }
+                  }}
+                >
+                  {"\u041f\u0440\u043e\u0444\u0438\u043b\u044c"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__dNqLj
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+                    $steps["goToCart"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/cart` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              location.assign(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToCart"] != null &&
+                      typeof $steps["goToCart"] === "object" &&
+                      typeof $steps["goToCart"].then === "function"
+                    ) {
+                      $steps["goToCart"] = await $steps["goToCart"];
+                    }
+                  }}
+                >
+                  {"\u041a\u043e\u0440\u0437\u0438\u043d\u0430"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__lQpnd
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+                    $steps["goToFavorites"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/favorites` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              location.assign(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToFavorites"] != null &&
+                      typeof $steps["goToFavorites"] === "object" &&
+                      typeof $steps["goToFavorites"].then === "function"
+                    ) {
+                      $steps["goToFavorites"] = await $steps["goToFavorites"];
+                    }
+                  }}
+                >
+                  {"\u0418\u0437\u0431\u0440\u0430\u043d\u043d\u043e\u0435"}
+                </div>
               </div>
             </div>
             <div
@@ -527,13 +677,6 @@ function PlasmicAbout__RenderFunc(props) {
               data-plasmic-name={"logoText1"}
               data-plasmic-override={overrides.logoText1}
               className={classNames(projectcss.all, sty.logoText1)}
-            />
-
-            <Button
-              data-plasmic-name={"homeButton"}
-              data-plasmic-override={overrides.homeButton}
-              className={classNames("__wab_instance", sty.homeButton)}
-              label={null}
               onClick={async event => {
                 const $steps = {};
                 $steps["goToHomepage"] = true
@@ -561,7 +704,6 @@ function PlasmicAbout__RenderFunc(props) {
                   $steps["goToHomepage"] = await $steps["goToHomepage"];
                 }
               }}
-              roundedFull={true}
             />
 
             <div
@@ -815,44 +957,6 @@ function PlasmicAbout__RenderFunc(props) {
             </div>
           </div>
           <div
-            data-plasmic-name={"land"}
-            data-plasmic-override={overrides.land}
-            className={classNames(projectcss.all, sty.land)}
-          >
-            <div
-              data-plasmic-name={"rectangle447"}
-              data-plasmic-override={overrides.rectangle447}
-              className={classNames(projectcss.all, sty.rectangle447)}
-            />
-
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__xzByp
-              )}
-            >
-              {
-                "              \u2013 \u043d\u0435\u0431\u043e\u043b\u044c\u0448\u0430\u044f, \u043d\u043e \u043a\u0440\u0430\u0439\u043d\u0435 \u0430\u043c\u0431\u0438\u0446\u0438\u043e\u0437\u043d\u0430\u044f \u043a\u043e\u043c\u043f\u0430\u043d\u0438\u044f, \u043e\u0441\u043d\u043e\u0432\u0430\u043d\u043d\u0430\u044f \u0432 2024 \u0433\u043e\u0434\u0443 \u0432 \u0441\u0430\u043c\u043e\u043c \u0441\u0435\u0440\u0434\u0446\u0435 \u0414\u0430\u043b\u044c\u043d\u0435\u0433\u043e \u0412\u043e\u0441\u0442\u043e\u043a\u0430 - \u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a\u0435. \u0421\u0442\u0440\u0430\u0441\u0442\u044c \u043a \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0439 \u043a\u0430\u043d\u0446\u0435\u043b\u044f\u0440\u0438\u0438 \u0438 \u0441\u0442\u0440\u0435\u043c\u043b\u0435\u043d\u0438\u0435 \u0441\u0434\u0435\u043b\u0430\u0442\u044c \u0432\u0430\u0448 \u0440\u0430\u0431\u043e\u0447\u0438\u0439 \u043f\u0440\u043e\u0446\u0435\u0441\u0441 \u043d\u0430\u0438\u0431\u043e\u043b\u0435\u0435 \u0443\u0434\u043e\u0431\u043d\u044b\u043c \u0438 \u043f\u0440\u0438\u044f\u0442\u043d\u044b\u043c \u0441\u0442\u0430\u043b\u0438 \u043e\u0441\u043d\u043e\u0432\u043e\u0439 \u043d\u0430\u0448\u0435\u0433\u043e \u0431\u0438\u0437\u043d\u0435\u0441\u0430.\n\n\u041d\u0430\u0448\u0430 \u0433\u043b\u0430\u0432\u043d\u0430\u044f \u0446\u0435\u043b\u044c \u2013 \u043f\u0440\u0435\u0434\u043e\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u0432\u0430\u043c \u0448\u0438\u0440\u043e\u043a\u0438\u0439 \u0430\u0441\u0441\u043e\u0440\u0442\u0438\u043c\u0435\u043d\u0442 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0439 \u043a\u0430\u043d\u0446\u0435\u043b\u044f\u0440\u0438\u0438 \u043f\u043e \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b\u043c \u0446\u0435\u043d\u0430\u043c. \u041c\u044b \u0442\u0449\u0430\u0442\u0435\u043b\u044c\u043d\u043e \u043f\u043e\u0434\u0431\u0438\u0440\u0430\u0435\u043c \u0432\u0441\u0435 \u0442\u043e\u0432\u0430\u0440\u044b, \u0447\u0442\u043e\u0431\u044b \u0443\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u0438\u0442\u044c \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u0438 \u043a\u0430\u0436\u0434\u043e\u0433\u043e.\n\n\u041d\u0430\u0441 \u0432\u044b\u0431\u0438\u0440\u0430\u044e\u0442 \u0437\u0430 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0443\u044e \u043f\u0440\u043e\u0434\u0443\u043a\u0446\u0438\u044e, \u0443\u0434\u043e\u0431\u0441\u0442\u0432\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u0438 \u0431\u044b\u0441\u0442\u0440\u0443\u044e \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0443 \u043a\u0430\u043a \u0432 \u0433. \u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a, \u0442\u0430\u043a \u0438 \u043f\u043e \u0432\u0441\u0435\u0439 \u0420\u043e\u0441\u0441\u0438\u0438."
-              }
-            </div>
-            <div
-              data-plasmic-name={"logoText2"}
-              data-plasmic-override={overrides.logoText2}
-              className={classNames(projectcss.all, sty.logoText2)}
-            />
-
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__vzQ8F
-              )}
-            >
-              {"\u041e \u043d\u0430\u0441"}
-            </div>
-          </div>
-          <div
             className={classNames(
               projectcss.all,
               projectcss.__wab_text,
@@ -868,8 +972,8 @@ function PlasmicAbout__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
+  about: [
+    "about",
     "footer",
     "scatch\u0421\u0435\u0442\u044c\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u043e\u0432\u0423\u0441\u043f\u0435\u0448\u043d\u043e\u0420\u0430\u0431\u043e\u0442\u0430\u044e\u0449\u0438\u0445\u0412\u043e\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a\u0435\u0418\u0414\u0440\u0443\u0433\u0438\u0445\u0413\u043e\u0440\u043e\u0434\u0430\u0445\u0420\u043e\u0441\u0441\u0438\u0438\u0410\u0415\u0449\u0451\u042d\u0442\u043e\u041a\u0440\u0443\u043f\u043d\u044b\u0439\u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u041a\u0430\u043d\u0446\u0435\u043b\u044f\u0440\u0438\u0438",
     "\u043c\u0430\u0433\u0430\u0437\u0438\u043d\u041a\u0430\u043d\u0446\u0442\u043e\u0432\u0430\u0440\u043e\u0432Scatch",
@@ -879,24 +983,21 @@ const PlasmicDescendants = {
     "rectangle544",
     "\u0432\u041d\u0430\u0448\u0438\u0445\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445",
     "_89024731492",
+    "land",
+    "rectangle447",
+    "logoText2",
     "header2",
     "header",
     "rightPanel",
-    "toProfile",
-    "toCart",
     "freeBox",
     "logoText1",
-    "homeButton",
     "region",
     "\u0440\u0435\u0433\u0438\u043e\u043d\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0438",
     "citySelector",
     "search",
     "rectangle1",
     "searchField",
-    "rectangle2",
-    "land",
-    "rectangle447",
-    "logoText2"
+    "rectangle2"
   ],
 
   footer: [
@@ -929,15 +1030,15 @@ const PlasmicDescendants = {
   ],
 
   _89024731492: ["_89024731492"],
+  land: ["land", "rectangle447", "logoText2"],
+  rectangle447: ["rectangle447"],
+  logoText2: ["logoText2"],
   header2: [
     "header2",
     "header",
     "rightPanel",
-    "toProfile",
-    "toCart",
     "freeBox",
     "logoText1",
-    "homeButton",
     "region",
     "\u0440\u0435\u0433\u0438\u043e\u043d\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0438",
     "citySelector",
@@ -947,13 +1048,10 @@ const PlasmicDescendants = {
     "rectangle2"
   ],
 
-  header: ["header", "rightPanel", "toProfile", "toCart"],
-  rightPanel: ["rightPanel", "toProfile", "toCart"],
-  toProfile: ["toProfile"],
-  toCart: ["toCart"],
+  header: ["header", "rightPanel"],
+  rightPanel: ["rightPanel"],
   freeBox: ["freeBox"],
   logoText1: ["logoText1"],
-  homeButton: ["homeButton"],
   region: [
     "region",
     "\u0440\u0435\u0433\u0438\u043e\u043d\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0438",
@@ -968,10 +1066,7 @@ const PlasmicDescendants = {
   search: ["search", "rectangle1", "searchField", "rectangle2"],
   rectangle1: ["rectangle1"],
   searchField: ["searchField"],
-  rectangle2: ["rectangle2"],
-  land: ["land", "rectangle447", "logoText2"],
-  rectangle447: ["rectangle447"],
-  logoText2: ["logoText2"]
+  rectangle2: ["rectangle2"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -993,7 +1088,7 @@ function makeNodeComponent(nodeName) {
       forNode: nodeName
     });
   };
-  if (nodeName === "root") {
+  if (nodeName === "about") {
     func.displayName = "PlasmicAbout";
   } else {
     func.displayName = `PlasmicAbout.${nodeName}`;
@@ -1003,7 +1098,7 @@ function makeNodeComponent(nodeName) {
 
 export const PlasmicAbout = Object.assign(
   // Top-level PlasmicAbout renders the root element
-  makeNodeComponent("root"),
+  makeNodeComponent("about"),
   {
     // Helper components rendering sub-elements
     footer: makeNodeComponent("footer"),
@@ -1022,14 +1117,14 @@ export const PlasmicAbout = Object.assign(
       "\u0432\u041d\u0430\u0448\u0438\u0445\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445"
     ),
     _89024731492: makeNodeComponent("_89024731492"),
+    land: makeNodeComponent("land"),
+    rectangle447: makeNodeComponent("rectangle447"),
+    logoText2: makeNodeComponent("logoText2"),
     header2: makeNodeComponent("header2"),
     header: makeNodeComponent("header"),
     rightPanel: makeNodeComponent("rightPanel"),
-    toProfile: makeNodeComponent("toProfile"),
-    toCart: makeNodeComponent("toCart"),
     freeBox: makeNodeComponent("freeBox"),
     logoText1: makeNodeComponent("logoText1"),
-    homeButton: makeNodeComponent("homeButton"),
     region: makeNodeComponent("region"),
     регионДоставки: makeNodeComponent(
       "\u0440\u0435\u0433\u0438\u043e\u043d\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0438"
@@ -1039,9 +1134,6 @@ export const PlasmicAbout = Object.assign(
     rectangle1: makeNodeComponent("rectangle1"),
     searchField: makeNodeComponent("searchField"),
     rectangle2: makeNodeComponent("rectangle2"),
-    land: makeNodeComponent("land"),
-    rectangle447: makeNodeComponent("rectangle447"),
-    logoText2: makeNodeComponent("logoText2"),
     // Metadata about props expected for PlasmicAbout
     internalVariantProps: PlasmicAbout__VariantProps,
     internalArgProps: PlasmicAbout__ArgProps,

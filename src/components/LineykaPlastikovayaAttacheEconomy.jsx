@@ -18,7 +18,9 @@ function LineykaPlastikovayaAttacheEconomy_(props, ref) {
   //
   // By default, we are just piping all LineykaPlastikovayaAttacheEconomyProps here, but feel free
   // to do whatever works for you.
-  return <PlasmicLineykaPlastikovayaAttacheEconomy root={{ ref }} {...props} />;
+  return (
+    <PlasmicLineykaPlastikovayaAttacheEconomy lineyka={{ ref }} {...props} />
+  );
 }
 
 const LineykaPlastikovayaAttacheEconomy = React.forwardRef(

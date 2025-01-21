@@ -12,12 +12,37 @@ import * as React from "react";
 import {
   classNames,
   createPlasmicElementProxy,
-  deriveRenderOpts
+  deriveRenderOpts,
+  generateStateOnChangeProp,
+  set as $stateSet,
+  useDollarState
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
+import Select from "../../Select"; // plasmic-import: WDmcJsuYHVsc/component
+import MenuItem from "../../MenuItem"; // plasmic-import: SPPaFCfdP_1a/component
+import TextField from "../../TextField"; // plasmic-import: jHJkxpVOWWNk/component
+import Button from "../../Button"; // plasmic-import: YEbXEiVokJ6F/component
 import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: pwPQehv5dRCmck24osLGTw/projectcss
 import sty from "./PlasmicProfile.module.css"; // plasmic-import: M-zLI4xJ2YLe/css
+import SubtractIcon from "./icons/PlasmicIcon__Subtract"; // plasmic-import: MDoTlH2Xh3eu/icon
+import HeartIcon from "./icons/PlasmicIcon__Heart"; // plasmic-import: e7qkCN3NBUu0/icon
+import CartIcon from "./icons/PlasmicIcon__Cart"; // plasmic-import: XvKAHPgz-9Dl/icon
+import ProfileIcon from "./icons/PlasmicIcon__Profile"; // plasmic-import: V9FA4UKafOeV/icon
+import Location2Icon from "./icons/PlasmicIcon__Location2"; // plasmic-import: rMYIo-GnlfK6/icon
+import SearchIcon from "./icons/PlasmicIcon__Search"; // plasmic-import: 0A_Djc7hhrf6/icon
+import Rectangle76Icon from "./icons/PlasmicIcon__Rectangle76"; // plasmic-import: 9CClV-mg1ugT/icon
+import LocationIcon from "./icons/PlasmicIcon__Location"; // plasmic-import: DTr1oUEcNL9H/icon
+import VectorIcon from "./icons/PlasmicIcon__Vector"; // plasmic-import: ziFZt_LyiGn_/icon
+import LetterIcon from "./icons/PlasmicIcon__Letter"; // plasmic-import: LfmTnDUMmVX0/icon
+import Vector2Icon from "./icons/PlasmicIcon__Vector2"; // plasmic-import: dfIBTVQDquUU/icon
+import NoteIcon from "./icons/PlasmicIcon__Note"; // plasmic-import: WZFxP-z_0aZr/icon
+import Note2Icon from "./icons/PlasmicIcon__Note2"; // plasmic-import: u29lU0Ao8Xpq/icon
+import Rectangle501Icon from "./icons/PlasmicIcon__Rectangle501"; // plasmic-import: 0bZOr4fChSuJ/icon
+import QualityIcon from "./icons/PlasmicIcon__Quality"; // plasmic-import: VgL2nrjSMd51/icon
+import InvoiceIcon from "./icons/PlasmicIcon__Invoice"; // plasmic-import: uTcrHxbRF4PH/icon
+import PackageDeliveryIcon from "./icons/PlasmicIcon__PackageDelivery"; // plasmic-import: C7dYtPKXKfMW/icon
+import AccountIcon from "./icons/PlasmicIcon__Account"; // plasmic-import: ESoR_jAkRrQO/icon
 
 createPlasmicElementProxy;
 
@@ -46,12 +71,36 @@ function PlasmicProfile__RenderFunc(props) {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "citySelector.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "searchField.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      }
+    ],
+
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
   return (
     <React.Fragment>
       <div className={projectcss.plasmic_page_wrapper}>
         <div
-          data-plasmic-name={"root"}
-          data-plasmic-override={overrides.root}
+          data-plasmic-name={"profile"}
+          data-plasmic-override={overrides.profile}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
@@ -60,16 +109,1537 @@ function PlasmicProfile__RenderFunc(props) {
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
-            sty.root
+            sty.profile
           )}
-        />
+        >
+          <div
+            data-plasmic-name={"header2"}
+            data-plasmic-override={overrides.header2}
+            className={classNames(projectcss.all, sty.header2)}
+          >
+            <div
+              data-plasmic-name={"header"}
+              data-plasmic-override={overrides.header}
+              className={classNames(projectcss.all, sty.header)}
+            >
+              <SubtractIcon
+                className={classNames(projectcss.all, sty.svg__zI5L)}
+                role={"img"}
+              />
+
+              <div
+                data-plasmic-name={"rightPanel"}
+                data-plasmic-override={overrides.rightPanel}
+                className={classNames(projectcss.all, sty.rightPanel)}
+              >
+                <HeartIcon
+                  className={classNames(projectcss.all, sty.svg___2Ap8T)}
+                  onClick={async event => {
+                    const $steps = {};
+                    $steps["goToFavorites"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/favorites` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              location.assign(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToFavorites"] != null &&
+                      typeof $steps["goToFavorites"] === "object" &&
+                      typeof $steps["goToFavorites"].then === "function"
+                    ) {
+                      $steps["goToFavorites"] = await $steps["goToFavorites"];
+                    }
+                  }}
+                  role={"img"}
+                />
+
+                <CartIcon
+                  className={classNames(projectcss.all, sty.svg__yajue)}
+                  onClick={async event => {
+                    const $steps = {};
+                    $steps["goToCart"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/cart` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              location.assign(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToCart"] != null &&
+                      typeof $steps["goToCart"] === "object" &&
+                      typeof $steps["goToCart"].then === "function"
+                    ) {
+                      $steps["goToCart"] = await $steps["goToCart"];
+                    }
+                  }}
+                  role={"img"}
+                />
+
+                <ProfileIcon
+                  className={classNames(projectcss.all, sty.svg__kcWvT)}
+                  onClick={async event => {
+                    const $steps = {};
+                    $steps["goToProfile"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/profile` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              location.assign(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToProfile"] != null &&
+                      typeof $steps["goToProfile"] === "object" &&
+                      typeof $steps["goToProfile"].then === "function"
+                    ) {
+                      $steps["goToProfile"] = await $steps["goToProfile"];
+                    }
+                  }}
+                  role={"img"}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__i9GsD
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+                    $steps["goToProfile"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/profile` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              location.assign(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToProfile"] != null &&
+                      typeof $steps["goToProfile"] === "object" &&
+                      typeof $steps["goToProfile"].then === "function"
+                    ) {
+                      $steps["goToProfile"] = await $steps["goToProfile"];
+                    }
+                  }}
+                >
+                  {"\u041f\u0440\u043e\u0444\u0438\u043b\u044c"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__n0Zrl
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+                    $steps["goToCart"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/cart` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              location.assign(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToCart"] != null &&
+                      typeof $steps["goToCart"] === "object" &&
+                      typeof $steps["goToCart"].then === "function"
+                    ) {
+                      $steps["goToCart"] = await $steps["goToCart"];
+                    }
+                  }}
+                >
+                  {"\u041a\u043e\u0440\u0437\u0438\u043d\u0430"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__ogIl1
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+                    $steps["goToFavorites"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/favorites` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              location.assign(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToFavorites"] != null &&
+                      typeof $steps["goToFavorites"] === "object" &&
+                      typeof $steps["goToFavorites"].then === "function"
+                    ) {
+                      $steps["goToFavorites"] = await $steps["goToFavorites"];
+                    }
+                  }}
+                >
+                  {"\u0418\u0437\u0431\u0440\u0430\u043d\u043d\u043e\u0435"}
+                </div>
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"freeBox"}
+              data-plasmic-override={overrides.freeBox}
+              className={classNames(projectcss.all, sty.freeBox)}
+            />
+
+            <div
+              data-plasmic-name={"logoText1"}
+              data-plasmic-override={overrides.logoText1}
+              className={classNames(projectcss.all, sty.logoText1)}
+              onClick={async event => {
+                const $steps = {};
+                $steps["goToHomepage"] = true
+                  ? (() => {
+                      const actionArgs = { destination: `/` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          location.assign(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["goToHomepage"] != null &&
+                  typeof $steps["goToHomepage"] === "object" &&
+                  typeof $steps["goToHomepage"].then === "function"
+                ) {
+                  $steps["goToHomepage"] = await $steps["goToHomepage"];
+                }
+              }}
+            />
+
+            <div
+              data-plasmic-name={"region"}
+              data-plasmic-override={overrides.region}
+              className={classNames(projectcss.all, sty.region)}
+            >
+              <Location2Icon
+                className={classNames(projectcss.all, sty.svg__jqPmK)}
+                role={"img"}
+              />
+
+              <div
+                data-plasmic-name={
+                  "\u0440\u0435\u0433\u0438\u043e\u043d\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0438"
+                }
+                data-plasmic-override={overrides.регионДоставки}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.региондоставки
+                )}
+              >
+                {
+                  " \u0420\u0435\u0433\u0438\u043e\u043d \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0438:\n"
+                }
+              </div>
+              <Select
+                data-plasmic-name={"citySelector"}
+                data-plasmic-override={overrides.citySelector}
+                className={classNames("__wab_instance", sty.citySelector)}
+                description={"Description..."}
+                initialSelectedValue={
+                  "\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a"
+                }
+                items={
+                  <React.Fragment>
+                    <MenuItem
+                      label={
+                        "\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a"
+                      }
+                      value={
+                        "\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a"
+                      }
+                    />
+
+                    <MenuItem
+                      label={
+                        "\u0425\u0430\u0431\u0430\u0440\u043e\u0432\u0441\u043a"
+                      }
+                      value={
+                        "\u0425\u0430\u0431\u0430\u0440\u043e\u0432\u0441\u043a"
+                      }
+                    />
+
+                    <MenuItem
+                      label={
+                        "\u0421\u043f\u0430\u0441\u0441\u043a-\u0414\u0430\u043b\u044c\u043d\u0438\u0439"
+                      }
+                      value={
+                        "\u0421\u043f\u0430\u0441\u0441\u043a-\u0414\u0430\u043b\u044c\u043d\u0438\u0439"
+                      }
+                    />
+
+                    <MenuItem
+                      label={"\u0410\u0440\u0442\u0435\u043c"}
+                      value={"\u0410\u0440\u0442\u0435\u043c"}
+                    />
+
+                    <MenuItem
+                      label={"\u041d\u0430\u0445\u043e\u0434\u043a\u0430"}
+                      value={"\u041d\u0430\u0445\u043e\u0434\u043a\u0430"}
+                    />
+
+                    <MenuItem
+                      label={
+                        "\u0425\u0430\u0431\u0430\u0440\u043e\u0432\u0441\u043a"
+                      }
+                      value={
+                        "\u0425\u0430\u0431\u0430\u0440\u043e\u0432\u0441\u043a"
+                      }
+                    />
+
+                    <MenuItem
+                      label={
+                        "\u041f\u0435\u0442\u0440\u043e\u043f\u0430\u043b\u043e\u0432\u0441\u043a-\u041a\u0430\u043c\u0447\u0430\u0442\u0441\u043a\u0438\u0439"
+                      }
+                      value={
+                        "\u041f\u0435\u0442\u0440\u043e\u043f\u0430\u043b\u043e\u0432\u0441\u043a-\u041a\u0430\u043c\u0447\u0430\u0442\u0441\u043a\u0438\u0439"
+                      }
+                    />
+
+                    <MenuItem
+                      label={
+                        "\u042e\u0436\u043d\u043e-\u0421\u0430\u0445\u0430\u043b\u0438\u043d\u0441\u043a"
+                      }
+                      value={
+                        "\u042e\u0436\u043d\u043e-\u0421\u0430\u0445\u0430\u043b\u0438\u043d\u0441\u043a"
+                      }
+                    />
+                  </React.Fragment>
+                }
+                label={null}
+                onChange={async (...eventArgs) => {
+                  generateStateOnChangeProp($state, [
+                    "citySelector",
+                    "value"
+                  ]).apply(null, eventArgs);
+                  if (
+                    eventArgs.length > 1 &&
+                    eventArgs[1] &&
+                    eventArgs[1]._plasmic_state_init_
+                  ) {
+                    return;
+                  }
+                }}
+                placeholder={`Select an item${$state.citySelector.value}`}
+                showDescription={false}
+                showLabel={false}
+              />
+            </div>
+            <div
+              data-plasmic-name={"search"}
+              data-plasmic-override={overrides.search}
+              className={classNames(projectcss.all, sty.search)}
+            >
+              <div
+                data-plasmic-name={"rectangle1"}
+                data-plasmic-override={overrides.rectangle1}
+                className={classNames(projectcss.all, sty.rectangle1)}
+              />
+
+              <TextField
+                data-plasmic-name={"searchField"}
+                data-plasmic-override={overrides.searchField}
+                className={classNames("__wab_instance", sty.searchField)}
+                defaultValue={``}
+                description={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__xTPes
+                    )}
+                  >
+                    {"Description..."}
+                  </div>
+                }
+                inputMode={"text"}
+                label={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__zzXwE
+                    )}
+                  >
+                    {"Label"}
+                  </div>
+                }
+                onChange={async (...eventArgs) => {
+                  generateStateOnChangeProp($state, [
+                    "searchField",
+                    "value"
+                  ]).apply(null, eventArgs);
+                  if (
+                    eventArgs.length > 1 &&
+                    eventArgs[1] &&
+                    eventArgs[1]._plasmic_state_init_
+                  ) {
+                    return;
+                  }
+                }}
+                placeholder={
+                  "\u041f\u043e\u0438\u0441\u043a \u0442\u043e\u0432\u0430\u0440\u043e\u0432"
+                }
+                showDescription={false}
+                showLabel={false}
+              />
+
+              <div
+                data-plasmic-name={"rectangle2"}
+                data-plasmic-override={overrides.rectangle2}
+                className={classNames(projectcss.all, sty.rectangle2)}
+                onClick={async event => {
+                  const $steps = {};
+                  $steps["updateStateVariable"] = true
+                    ? (() => {
+                        const actionArgs = { operation: 0 };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateStateVariable"] != null &&
+                    typeof $steps["updateStateVariable"] === "object" &&
+                    typeof $steps["updateStateVariable"].then === "function"
+                  ) {
+                    $steps["updateStateVariable"] = await $steps[
+                      "updateStateVariable"
+                    ];
+                  }
+                }}
+              />
+
+              <SearchIcon
+                className={classNames(projectcss.all, sty.svg__mlozU)}
+                onClick={async event => {
+                  const $steps = {};
+                  $steps["updateStateVariable"] = true
+                    ? (() => {
+                        const actionArgs = { operation: 0 };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateStateVariable"] != null &&
+                    typeof $steps["updateStateVariable"] === "object" &&
+                    typeof $steps["updateStateVariable"].then === "function"
+                  ) {
+                    $steps["updateStateVariable"] = await $steps[
+                      "updateStateVariable"
+                    ];
+                  }
+                }}
+                role={"img"}
+              />
+            </div>
+          </div>
+          <div
+            data-plasmic-name={"footer"}
+            data-plasmic-override={overrides.footer}
+            className={classNames(projectcss.all, sty.footer)}
+          >
+            <Rectangle76Icon
+              className={classNames(projectcss.all, sty.svg__zGkMd)}
+              role={"img"}
+            />
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__whMWs
+              )}
+            >
+              {
+                "\u041e\u0431\u0440\u0430\u0442\u043d\u0430\u044f \u0441\u0432\u0437\u044f\u044c"
+              }
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__ntk8Z
+              )}
+            >
+              {
+                "\u0412 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442-\u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0435"
+              }
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__dk1Rd
+              )}
+            >
+              {
+                "\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0430 \u0438 \u043e\u043f\u043b\u0430\u0442\u0430"
+              }
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__nzAR
+              )}
+              onClick={async event => {
+                const $steps = {};
+                $steps["goToQa"] = true
+                  ? (() => {
+                      const actionArgs = { destination: `/qa` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          location.assign(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["goToQa"] != null &&
+                  typeof $steps["goToQa"] === "object" &&
+                  typeof $steps["goToQa"].then === "function"
+                ) {
+                  $steps["goToQa"] = await $steps["goToQa"];
+                }
+              }}
+            >
+              {
+                "\u0412\u043e\u043f\u0440\u043e\u0441\u044b \u0438 \u043e\u0442\u0432\u0435\u0442\u044b"
+              }
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__jsBjm
+              )}
+            >
+              {
+                "\u0425\u043e\u0442\u0438\u0442\u0435 \u0443 \u043d\u0430\u0441 \u0440\u0430\u0431\u043e\u0442\u0430\u0442\u044c?"
+              }
+            </div>
+            <LocationIcon
+              className={classNames(projectcss.all, sty.svg__g0FQ)}
+              role={"img"}
+            />
+
+            <div
+              data-plasmic-name={
+                "scatch\u0421\u0435\u0442\u044c\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u043e\u0432\u0423\u0441\u043f\u0435\u0448\u043d\u043e\u0420\u0430\u0431\u043e\u0442\u0430\u044e\u0449\u0438\u0445\u0412\u043e\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a\u0435\u0418\u0414\u0440\u0443\u0433\u0438\u0445\u0413\u043e\u0440\u043e\u0434\u0430\u0445\u0420\u043e\u0441\u0441\u0438\u0438\u0410\u0415\u0449\u0451\u042d\u0442\u043e\u041a\u0440\u0443\u043f\u043d\u044b\u0439\u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u041a\u0430\u043d\u0446\u0435\u043b\u044f\u0440\u0438\u0438"
+              }
+              data-plasmic-override={
+                overrides.scatchСетьМагазиновУспешноРаботающихВоВладивостокеИДругихГородахРоссииАЕщёЭтоКрупныйИнтернетМагазинКанцелярии
+              }
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.scatchсетьмагазиновуспешноработающихвовладивостокеидругихгородахроссииаещёэтокрупныйинтернетмагазинканцелярии
+              )}
+            >
+              {
+                "\u00abScatch\u00bb \u2013 \u0441\u0435\u0442\u044c \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u043e\u0432, \u0443\u0441\u043f\u0435\u0448\u043d\u043e \u0440\u0430\u0431\u043e\u0442\u0430\u044e\u0449\u0438\u0445 \u0432\u043e \u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a\u0435 \u0438 \u0434\u0440\u0443\u0433\u0438\u0445 \u0433\u043e\u0440\u043e\u0434\u0430\u0445 \u0420\u043e\u0441\u0441\u0438\u0438.\n\n\u0410 \u0435\u0449\u0451 \u044d\u0442\u043e \u2013 \u043a\u0440\u0443\u043f\u043d\u044b\u0439 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442-\u043c\u0430\u0433\u0430\u0437\u0438\u043d \u043a\u0430\u043d\u0446\u0435\u043b\u044f\u0440\u0438\u0438. "
+              }
+            </div>
+            <div
+              data-plasmic-name={
+                "\u043c\u0430\u0433\u0430\u0437\u0438\u043d\u041a\u0430\u043d\u0446\u0442\u043e\u0432\u0430\u0440\u043e\u0432Scatch"
+              }
+              data-plasmic-override={overrides.магазинКанцтоваровScatch}
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.магазинканцтоваровScatch
+              )}
+            >
+              {
+                "\u041c\u0430\u0433\u0430\u0437\u0438\u043d \u043a\u0430\u043d\u0446\u0442\u043e\u0432\u0430\u0440\u043e\u0432 \u00abScatch\u00bb\n"
+              }
+            </div>
+            <div
+              data-plasmic-name={"youtube"}
+              data-plasmic-override={overrides.youtube}
+              className={classNames(projectcss.all, sty.youtube)}
+            />
+
+            <div
+              data-plasmic-name={"whatsapp"}
+              data-plasmic-override={overrides.whatsapp}
+              className={classNames(projectcss.all, sty.whatsapp)}
+            />
+
+            <div
+              data-plasmic-name={"telegram"}
+              data-plasmic-override={overrides.telegram}
+              className={classNames(projectcss.all, sty.telegram)}
+            />
+
+            <div
+              data-plasmic-name={"rectangle544"}
+              data-plasmic-override={overrides.rectangle544}
+              className={classNames(projectcss.all, sty.rectangle544)}
+            />
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text___7B33T
+              )}
+            >
+              {"scatch.ru, 2024"}
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__fZo
+              )}
+            >
+              {
+                "\u0412\u0441\u0435 \u043f\u0440\u0430\u0432\u0430 \u0437\u0430\u0449\u0438\u0449\u0435\u043d\u044b"
+              }
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__gTsZl
+              )}
+            >
+              {"\u00a9"}
+            </div>
+            <div
+              data-plasmic-name={
+                "\u0432\u041d\u0430\u0448\u0438\u0445\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445"
+              }
+              data-plasmic-override={overrides.вНашихМагазинах}
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.внашихмагазинах
+              )}
+            >
+              {
+                "\u0412 \u043d\u0430\u0448\u0438\u0445 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445\n"
+              }
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__oA4Da
+              )}
+            >
+              {
+                "\u0410\u0434\u0440\u0435\u0441\u0430 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u043e\u0432"
+              }
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__ubkXs
+              )}
+              onClick={async event => {
+                const $steps = {};
+                $steps["goToAbout"] = true
+                  ? (() => {
+                      const actionArgs = { destination: `/about` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          location.assign(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["goToAbout"] != null &&
+                  typeof $steps["goToAbout"] === "object" &&
+                  typeof $steps["goToAbout"].then === "function"
+                ) {
+                  $steps["goToAbout"] = await $steps["goToAbout"];
+                }
+              }}
+            >
+              {"\u041e \u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0438"}
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__bBlMn
+              )}
+            >
+              {"\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b"}
+            </div>
+            <div
+              data-plasmic-name={"_89024731492"}
+              data-plasmic-override={overrides._89024731492}
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty._89024731492
+              )}
+            >
+              {"8 (902) 473-14-92 "}
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__smdSs
+              )}
+            >
+              {"support@scatch.ru"}
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__mtcTy
+              )}
+            >
+              {
+                "\u0433. \u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a, \u041b\u0435\u043d\u0438\u043d\u0430 46/1"
+              }
+            </div>
+            <VectorIcon
+              className={classNames(projectcss.all, sty.svg__hp6Ru)}
+              role={"img"}
+            />
+
+            <LetterIcon
+              className={classNames(projectcss.all, sty.svg___5Sz2)}
+              role={"img"}
+            />
+
+            <Vector2Icon
+              className={classNames(projectcss.all, sty.svg__ooQao)}
+              role={"img"}
+            />
+          </div>
+          <div
+            data-plasmic-name={"figmaPaste"}
+            data-plasmic-override={overrides.figmaPaste}
+            className={classNames(projectcss.all, sty.figmaPaste)}
+          >
+            <div
+              data-plasmic-name={"land"}
+              data-plasmic-override={overrides.land}
+              className={classNames(projectcss.all, sty.land)}
+            >
+              <div
+                data-plasmic-name={"rectangle502"}
+                data-plasmic-override={overrides.rectangle502}
+                className={classNames(projectcss.all, sty.rectangle502)}
+              />
+
+              <div
+                data-plasmic-name={"rectangle503"}
+                data-plasmic-override={overrides.rectangle503}
+                className={classNames(projectcss.all, sty.rectangle503)}
+              />
+
+              <div
+                data-plasmic-name={"name"}
+                data-plasmic-override={overrides.name}
+                className={classNames(projectcss.all, sty.name)}
+              >
+                <div
+                  data-plasmic-name={"\u0438\u0432\u0430\u043d"}
+                  data-plasmic-override={overrides.иван}
+                  className={classNames(projectcss.all, sty.иван)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__z8A
+                    )}
+                  >
+                    {"\u0418\u0432\u0430\u043d"}
+                  </div>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__kx4Nh
+                  )}
+                >
+                  {"\u0418\u043c\u044f"}
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"number"}
+                data-plasmic-override={overrides.number}
+                className={classNames(projectcss.all, sty.number)}
+              >
+                <div
+                  data-plasmic-name={"_79085923375"}
+                  data-plasmic-override={overrides._79085923375}
+                  className={classNames(projectcss.all, sty._79085923375)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__bzWtg
+                    )}
+                  >
+                    {"+7 (908) 592-33-75"}
+                  </div>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__oFsFr
+                  )}
+                >
+                  {
+                    "\u041d\u043e\u043c\u0435\u0440 \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u0430"
+                  }
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"surname"}
+                data-plasmic-override={overrides.surname}
+                className={classNames(projectcss.all, sty.surname)}
+              >
+                <div
+                  data-plasmic-name={"\u0438\u0432\u0430\u043d\u043e\u0432"}
+                  data-plasmic-override={overrides.иванов}
+                  className={classNames(projectcss.all, sty.иванов)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__pfyiv
+                    )}
+                  >
+                    {"\u0418\u0432\u0430\u043d\u043e\u0432"}
+                  </div>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__lJli3
+                  )}
+                >
+                  {"\u0424\u0430\u043c\u0438\u043b\u0438\u044f"}
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"password"}
+                data-plasmic-override={overrides.password}
+                className={classNames(projectcss.all, sty.password)}
+              >
+                <div
+                  data-plasmic-name={"_"}
+                  data-plasmic-override={overrides._}
+                  className={classNames(projectcss.all, sty._)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__u7Rc6
+                    )}
+                  >
+                    {"******************"}
+                  </div>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__yPjg5
+                  )}
+                >
+                  {"\u041f\u0430\u0440\u043e\u043b\u044c"}
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"address"}
+                data-plasmic-override={overrides.address}
+                className={classNames(projectcss.all, sty.address)}
+              >
+                <div
+                  data-plasmic-name={
+                    "\u0440\u043e\u0441\u0441\u0438\u044f\u041f\u0440\u0438\u043c\u043e\u0440\u0441\u043a\u0438\u0439\u041a\u0440\u0430\u0439\u0413\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a\u0423\u043b\u0421\u0432\u0435\u0442\u043b\u0430\u043d\u0441\u043a\u0430\u044f22"
+                  }
+                  data-plasmic-override={
+                    overrides.россияПриморскийКрайГВладивостокУлСветланская22
+                  }
+                  className={classNames(
+                    projectcss.all,
+                    sty.россияприморскийкрайгвладивостокулсветланская22
+                  )}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__tbqAe
+                    )}
+                  >
+                    {
+                      "\u0420\u043e\u0441\u0441\u0438\u044f, \u041f\u0440\u0438\u043c\u043e\u0440\u0441\u043a\u0438\u0439 \u043a\u0440\u0430\u0439, \u0433. \u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a, \u0443\u043b. \u0421\u0432\u0435\u0442\u043b\u0430\u043d\u0441\u043a\u0430\u044f, 22"
+                    }
+                  </div>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__cvg8Q
+                  )}
+                >
+                  {
+                    "\u0410\u0434\u0440\u0435\u0441 \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0438"
+                  }
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"email"}
+                data-plasmic-override={overrides.email}
+                className={classNames(projectcss.all, sty.email)}
+              >
+                <div
+                  data-plasmic-name={"ivanTestovichMailRu"}
+                  data-plasmic-override={overrides.ivanTestovichMailRu}
+                  className={classNames(
+                    projectcss.all,
+                    sty.ivanTestovichMailRu
+                  )}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__nLd9I
+                    )}
+                  >
+                    {"ivan.testovich@mail.ru"}
+                  </div>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___2B2H0
+                  )}
+                >
+                  {"\u041f\u043e\u0447\u0442\u0430"}
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"icon"}
+                data-plasmic-override={overrides.icon}
+                className={classNames(projectcss.all, sty.icon)}
+              >
+                <div
+                  data-plasmic-name={"lunaDs2"}
+                  data-plasmic-override={overrides.lunaDs2}
+                  className={classNames(projectcss.all, sty.lunaDs2)}
+                />
+
+                <div
+                  data-plasmic-name={"rectangle541"}
+                  data-plasmic-override={overrides.rectangle541}
+                  className={classNames(projectcss.all, sty.rectangle541)}
+                >
+                  <Button
+                    className={classNames("__wab_instance", sty.button__srb7)}
+                    color={"neutral"}
+                    label={
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__iHWm3
+                        )}
+                      >
+                        {"\n"}
+                      </div>
+                    }
+                    roundedFull={true}
+                    type={"bordered"}
+                  />
+                </div>
+                <NoteIcon
+                  className={classNames(projectcss.all, sty.svg__irHf7)}
+                  role={"img"}
+                />
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__onhOn
+                )}
+              >
+                {
+                  "\u041b\u0438\u0447\u043d\u044b\u0435 \u0434\u0430\u043d\u043d\u044b\u0435"
+                }
+              </div>
+              <div
+                data-plasmic-name={"changeButton"}
+                data-plasmic-override={overrides.changeButton}
+                className={classNames(projectcss.all, sty.changeButton)}
+              >
+                <div
+                  data-plasmic-name={"rectangle548"}
+                  data-plasmic-override={overrides.rectangle548}
+                  className={classNames(projectcss.all, sty.rectangle548)}
+                >
+                  <Button
+                    className={classNames("__wab_instance", sty.button__ekSwj)}
+                    color={"neutral"}
+                    label={
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__s0Rpb
+                        )}
+                      >
+                        {""}
+                      </div>
+                    }
+                    roundedFull={true}
+                    type={"bordered"}
+                  />
+                </div>
+                <Note2Icon
+                  className={classNames(projectcss.all, sty.svg__jl5Gn)}
+                  role={"img"}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__aT8Zw
+                  )}
+                >
+                  {"\u0418\u0437\u043c\u0435\u043d\u0438\u0442\u044c"}
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"logOutButton"}
+                data-plasmic-override={overrides.logOutButton}
+                className={classNames(projectcss.all, sty.logOutButton)}
+              >
+                <div
+                  data-plasmic-name={"rectangle549"}
+                  data-plasmic-override={overrides.rectangle549}
+                  className={classNames(projectcss.all, sty.rectangle549)}
+                >
+                  <Button
+                    className={classNames("__wab_instance", sty.button__nJ2Pe)}
+                    color={"neutral"}
+                    label={
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__kLgv8
+                        )}
+                      >
+                        {""}
+                      </div>
+                    }
+                    roundedFull={true}
+                    type={"bordered"}
+                  />
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__qhIcr
+                    )}
+                  >
+                    {"\u0412\u044b\u0439\u0442\u0438"}
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"logOut1"}
+                  data-plasmic-override={overrides.logOut1}
+                  className={classNames(projectcss.all, sty.logOut1)}
+                />
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"menu"}
+              data-plasmic-override={overrides.menu}
+              className={classNames(projectcss.all, sty.menu)}
+            >
+              <div
+                data-plasmic-name={"rectangle447"}
+                data-plasmic-override={overrides.rectangle447}
+                className={classNames(projectcss.all, sty.rectangle447)}
+              />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__aSmFi
+                )}
+              >
+                {
+                  "\u0418\u0432\u0430\u043d \u0418\u0432\u0430\u043d\u043e\u0432"
+                }
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___2DJiZ
+                )}
+              >
+                {
+                  "\u0424\u0438\u0437\u0438\u0447\u0435\u0441\u043a\u043e\u0435 \u043b\u0438\u0446\u043e"
+                }
+              </div>
+              <div
+                data-plasmic-name={"lunaDs1"}
+                data-plasmic-override={overrides.lunaDs1}
+                className={classNames(projectcss.all, sty.lunaDs1)}
+              />
+
+              <Rectangle501Icon
+                className={classNames(projectcss.all, sty.svg__maPjY)}
+                role={"img"}
+              />
+
+              <div
+                data-plasmic-name={"rectangle540"}
+                data-plasmic-override={overrides.rectangle540}
+                className={classNames(projectcss.all, sty.rectangle540)}
+              />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__ihZaH
+                )}
+              >
+                {
+                  "\u041b\u0438\u0447\u043d\u044b\u0435 \u0434\u0430\u043d\u043d\u044b\u0435"
+                }
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___5KvGw
+                )}
+              >
+                {"\u041c\u043e\u0438 \u0437\u0430\u043a\u0430\u0437\u044b"}
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__bSk5Y
+                )}
+              >
+                {
+                  "\u041f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0430 \u043b\u043e\u044f\u043b\u044c\u043d\u043e\u0441\u0442\u0438"
+                }
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__nvIVn
+                )}
+              >
+                {
+                  "\u0412\u043e\u043f\u0440\u043e\u0441\u044b \u0438 \u043e\u0442\u0432\u0435\u0442\u044b"
+                }
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__cmXVv
+                )}
+              >
+                {
+                  "\u0414\u043e\u0433\u043e\u0432\u043e\u0440\u044b \u0438 \u0443\u0441\u043b\u043e\u0432\u0438\u044f \u043e\u043f\u043b\u0430\u0442\u044b"
+                }
+              </div>
+              <QualityIcon
+                className={classNames(projectcss.all, sty.svg__bnJ9S)}
+                role={"img"}
+              />
+
+              <div
+                data-plasmic-name={"qa1"}
+                data-plasmic-override={overrides.qa1}
+                className={classNames(projectcss.all, sty.qa1)}
+              />
+
+              <InvoiceIcon
+                className={classNames(projectcss.all, sty.svg__kRkQ)}
+                role={"img"}
+              />
+
+              <PackageDeliveryIcon
+                className={classNames(projectcss.all, sty.svg___9Y8Px)}
+                role={"img"}
+              />
+
+              <AccountIcon
+                className={classNames(projectcss.all, sty.svg__yc4PQ)}
+                role={"img"}
+              />
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__euUm
+              )}
+            >
+              {
+                "\u041b\u0438\u0447\u043d\u044b\u0439 \u043a\u0430\u0431\u0438\u043d\u0435\u0442"
+              }
+            </div>
+          </div>
+        </div>
       </div>
     </React.Fragment>
   );
 }
 
 const PlasmicDescendants = {
-  root: ["root"]
+  profile: [
+    "profile",
+    "header2",
+    "header",
+    "rightPanel",
+    "freeBox",
+    "logoText1",
+    "region",
+    "\u0440\u0435\u0433\u0438\u043e\u043d\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0438",
+    "citySelector",
+    "search",
+    "rectangle1",
+    "searchField",
+    "rectangle2",
+    "footer",
+    "scatch\u0421\u0435\u0442\u044c\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u043e\u0432\u0423\u0441\u043f\u0435\u0448\u043d\u043e\u0420\u0430\u0431\u043e\u0442\u0430\u044e\u0449\u0438\u0445\u0412\u043e\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a\u0435\u0418\u0414\u0440\u0443\u0433\u0438\u0445\u0413\u043e\u0440\u043e\u0434\u0430\u0445\u0420\u043e\u0441\u0441\u0438\u0438\u0410\u0415\u0449\u0451\u042d\u0442\u043e\u041a\u0440\u0443\u043f\u043d\u044b\u0439\u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u041a\u0430\u043d\u0446\u0435\u043b\u044f\u0440\u0438\u0438",
+    "\u043c\u0430\u0433\u0430\u0437\u0438\u043d\u041a\u0430\u043d\u0446\u0442\u043e\u0432\u0430\u0440\u043e\u0432Scatch",
+    "youtube",
+    "whatsapp",
+    "telegram",
+    "rectangle544",
+    "\u0432\u041d\u0430\u0448\u0438\u0445\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445",
+    "_89024731492",
+    "figmaPaste",
+    "land",
+    "rectangle502",
+    "rectangle503",
+    "name",
+    "\u0438\u0432\u0430\u043d",
+    "number",
+    "_79085923375",
+    "surname",
+    "\u0438\u0432\u0430\u043d\u043e\u0432",
+    "password",
+    "_",
+    "address",
+    "\u0440\u043e\u0441\u0441\u0438\u044f\u041f\u0440\u0438\u043c\u043e\u0440\u0441\u043a\u0438\u0439\u041a\u0440\u0430\u0439\u0413\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a\u0423\u043b\u0421\u0432\u0435\u0442\u043b\u0430\u043d\u0441\u043a\u0430\u044f22",
+    "email",
+    "ivanTestovichMailRu",
+    "icon",
+    "lunaDs2",
+    "rectangle541",
+    "changeButton",
+    "rectangle548",
+    "logOutButton",
+    "rectangle549",
+    "logOut1",
+    "menu",
+    "rectangle447",
+    "lunaDs1",
+    "rectangle540",
+    "qa1"
+  ],
+
+  header2: [
+    "header2",
+    "header",
+    "rightPanel",
+    "freeBox",
+    "logoText1",
+    "region",
+    "\u0440\u0435\u0433\u0438\u043e\u043d\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0438",
+    "citySelector",
+    "search",
+    "rectangle1",
+    "searchField",
+    "rectangle2"
+  ],
+
+  header: ["header", "rightPanel"],
+  rightPanel: ["rightPanel"],
+  freeBox: ["freeBox"],
+  logoText1: ["logoText1"],
+  region: [
+    "region",
+    "\u0440\u0435\u0433\u0438\u043e\u043d\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0438",
+    "citySelector"
+  ],
+
+  регионДоставки: [
+    "\u0440\u0435\u0433\u0438\u043e\u043d\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0438"
+  ],
+
+  citySelector: ["citySelector"],
+  search: ["search", "rectangle1", "searchField", "rectangle2"],
+  rectangle1: ["rectangle1"],
+  searchField: ["searchField"],
+  rectangle2: ["rectangle2"],
+  footer: [
+    "footer",
+    "scatch\u0421\u0435\u0442\u044c\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u043e\u0432\u0423\u0441\u043f\u0435\u0448\u043d\u043e\u0420\u0430\u0431\u043e\u0442\u0430\u044e\u0449\u0438\u0445\u0412\u043e\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a\u0435\u0418\u0414\u0440\u0443\u0433\u0438\u0445\u0413\u043e\u0440\u043e\u0434\u0430\u0445\u0420\u043e\u0441\u0441\u0438\u0438\u0410\u0415\u0449\u0451\u042d\u0442\u043e\u041a\u0440\u0443\u043f\u043d\u044b\u0439\u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u041a\u0430\u043d\u0446\u0435\u043b\u044f\u0440\u0438\u0438",
+    "\u043c\u0430\u0433\u0430\u0437\u0438\u043d\u041a\u0430\u043d\u0446\u0442\u043e\u0432\u0430\u0440\u043e\u0432Scatch",
+    "youtube",
+    "whatsapp",
+    "telegram",
+    "rectangle544",
+    "\u0432\u041d\u0430\u0448\u0438\u0445\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445",
+    "_89024731492"
+  ],
+
+  scatchСетьМагазиновУспешноРаботающихВоВладивостокеИДругихГородахРоссииАЕщёЭтоКрупныйИнтернетМагазинКанцелярии:
+    [
+      "scatch\u0421\u0435\u0442\u044c\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u043e\u0432\u0423\u0441\u043f\u0435\u0448\u043d\u043e\u0420\u0430\u0431\u043e\u0442\u0430\u044e\u0449\u0438\u0445\u0412\u043e\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a\u0435\u0418\u0414\u0440\u0443\u0433\u0438\u0445\u0413\u043e\u0440\u043e\u0434\u0430\u0445\u0420\u043e\u0441\u0441\u0438\u0438\u0410\u0415\u0449\u0451\u042d\u0442\u043e\u041a\u0440\u0443\u043f\u043d\u044b\u0439\u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u041a\u0430\u043d\u0446\u0435\u043b\u044f\u0440\u0438\u0438"
+    ],
+
+  магазинКанцтоваровScatch: [
+    "\u043c\u0430\u0433\u0430\u0437\u0438\u043d\u041a\u0430\u043d\u0446\u0442\u043e\u0432\u0430\u0440\u043e\u0432Scatch"
+  ],
+
+  youtube: ["youtube"],
+  whatsapp: ["whatsapp"],
+  telegram: ["telegram"],
+  rectangle544: ["rectangle544"],
+  вНашихМагазинах: [
+    "\u0432\u041d\u0430\u0448\u0438\u0445\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445"
+  ],
+
+  _89024731492: ["_89024731492"],
+  figmaPaste: [
+    "figmaPaste",
+    "land",
+    "rectangle502",
+    "rectangle503",
+    "name",
+    "\u0438\u0432\u0430\u043d",
+    "number",
+    "_79085923375",
+    "surname",
+    "\u0438\u0432\u0430\u043d\u043e\u0432",
+    "password",
+    "_",
+    "address",
+    "\u0440\u043e\u0441\u0441\u0438\u044f\u041f\u0440\u0438\u043c\u043e\u0440\u0441\u043a\u0438\u0439\u041a\u0440\u0430\u0439\u0413\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a\u0423\u043b\u0421\u0432\u0435\u0442\u043b\u0430\u043d\u0441\u043a\u0430\u044f22",
+    "email",
+    "ivanTestovichMailRu",
+    "icon",
+    "lunaDs2",
+    "rectangle541",
+    "changeButton",
+    "rectangle548",
+    "logOutButton",
+    "rectangle549",
+    "logOut1",
+    "menu",
+    "rectangle447",
+    "lunaDs1",
+    "rectangle540",
+    "qa1"
+  ],
+
+  land: [
+    "land",
+    "rectangle502",
+    "rectangle503",
+    "name",
+    "\u0438\u0432\u0430\u043d",
+    "number",
+    "_79085923375",
+    "surname",
+    "\u0438\u0432\u0430\u043d\u043e\u0432",
+    "password",
+    "_",
+    "address",
+    "\u0440\u043e\u0441\u0441\u0438\u044f\u041f\u0440\u0438\u043c\u043e\u0440\u0441\u043a\u0438\u0439\u041a\u0440\u0430\u0439\u0413\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a\u0423\u043b\u0421\u0432\u0435\u0442\u043b\u0430\u043d\u0441\u043a\u0430\u044f22",
+    "email",
+    "ivanTestovichMailRu",
+    "icon",
+    "lunaDs2",
+    "rectangle541",
+    "changeButton",
+    "rectangle548",
+    "logOutButton",
+    "rectangle549",
+    "logOut1"
+  ],
+
+  rectangle502: ["rectangle502"],
+  rectangle503: ["rectangle503"],
+  name: ["name", "\u0438\u0432\u0430\u043d"],
+  иван: ["\u0438\u0432\u0430\u043d"],
+  number: ["number", "_79085923375"],
+  _79085923375: ["_79085923375"],
+  surname: ["surname", "\u0438\u0432\u0430\u043d\u043e\u0432"],
+  иванов: ["\u0438\u0432\u0430\u043d\u043e\u0432"],
+  password: ["password", "_"],
+  _: ["_"],
+  address: [
+    "address",
+    "\u0440\u043e\u0441\u0441\u0438\u044f\u041f\u0440\u0438\u043c\u043e\u0440\u0441\u043a\u0438\u0439\u041a\u0440\u0430\u0439\u0413\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a\u0423\u043b\u0421\u0432\u0435\u0442\u043b\u0430\u043d\u0441\u043a\u0430\u044f22"
+  ],
+
+  россияПриморскийКрайГВладивостокУлСветланская22: [
+    "\u0440\u043e\u0441\u0441\u0438\u044f\u041f\u0440\u0438\u043c\u043e\u0440\u0441\u043a\u0438\u0439\u041a\u0440\u0430\u0439\u0413\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a\u0423\u043b\u0421\u0432\u0435\u0442\u043b\u0430\u043d\u0441\u043a\u0430\u044f22"
+  ],
+
+  email: ["email", "ivanTestovichMailRu"],
+  ivanTestovichMailRu: ["ivanTestovichMailRu"],
+  icon: ["icon", "lunaDs2", "rectangle541"],
+  lunaDs2: ["lunaDs2"],
+  rectangle541: ["rectangle541"],
+  changeButton: ["changeButton", "rectangle548"],
+  rectangle548: ["rectangle548"],
+  logOutButton: ["logOutButton", "rectangle549", "logOut1"],
+  rectangle549: ["rectangle549"],
+  logOut1: ["logOut1"],
+  menu: ["menu", "rectangle447", "lunaDs1", "rectangle540", "qa1"],
+  rectangle447: ["rectangle447"],
+  lunaDs1: ["lunaDs1"],
+  rectangle540: ["rectangle540"],
+  qa1: ["qa1"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -91,7 +1661,7 @@ function makeNodeComponent(nodeName) {
       forNode: nodeName
     });
   };
-  if (nodeName === "root") {
+  if (nodeName === "profile") {
     func.displayName = "PlasmicProfile";
   } else {
     func.displayName = `PlasmicProfile.${nodeName}`;
@@ -101,9 +1671,70 @@ function makeNodeComponent(nodeName) {
 
 export const PlasmicProfile = Object.assign(
   // Top-level PlasmicProfile renders the root element
-  makeNodeComponent("root"),
+  makeNodeComponent("profile"),
   {
     // Helper components rendering sub-elements
+    header2: makeNodeComponent("header2"),
+    header: makeNodeComponent("header"),
+    rightPanel: makeNodeComponent("rightPanel"),
+    freeBox: makeNodeComponent("freeBox"),
+    logoText1: makeNodeComponent("logoText1"),
+    region: makeNodeComponent("region"),
+    регионДоставки: makeNodeComponent(
+      "\u0440\u0435\u0433\u0438\u043e\u043d\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0438"
+    ),
+    citySelector: makeNodeComponent("citySelector"),
+    search: makeNodeComponent("search"),
+    rectangle1: makeNodeComponent("rectangle1"),
+    searchField: makeNodeComponent("searchField"),
+    rectangle2: makeNodeComponent("rectangle2"),
+    footer: makeNodeComponent("footer"),
+    scatchСетьМагазиновУспешноРаботающихВоВладивостокеИДругихГородахРоссииАЕщёЭтоКрупныйИнтернетМагазинКанцелярии:
+      makeNodeComponent(
+        "scatch\u0421\u0435\u0442\u044c\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u043e\u0432\u0423\u0441\u043f\u0435\u0448\u043d\u043e\u0420\u0430\u0431\u043e\u0442\u0430\u044e\u0449\u0438\u0445\u0412\u043e\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a\u0435\u0418\u0414\u0440\u0443\u0433\u0438\u0445\u0413\u043e\u0440\u043e\u0434\u0430\u0445\u0420\u043e\u0441\u0441\u0438\u0438\u0410\u0415\u0449\u0451\u042d\u0442\u043e\u041a\u0440\u0443\u043f\u043d\u044b\u0439\u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u041a\u0430\u043d\u0446\u0435\u043b\u044f\u0440\u0438\u0438"
+      ),
+    магазинКанцтоваровScatch: makeNodeComponent(
+      "\u043c\u0430\u0433\u0430\u0437\u0438\u043d\u041a\u0430\u043d\u0446\u0442\u043e\u0432\u0430\u0440\u043e\u0432Scatch"
+    ),
+    youtube: makeNodeComponent("youtube"),
+    whatsapp: makeNodeComponent("whatsapp"),
+    telegram: makeNodeComponent("telegram"),
+    rectangle544: makeNodeComponent("rectangle544"),
+    вНашихМагазинах: makeNodeComponent(
+      "\u0432\u041d\u0430\u0448\u0438\u0445\u041c\u0430\u0433\u0430\u0437\u0438\u043d\u0430\u0445"
+    ),
+    _89024731492: makeNodeComponent("_89024731492"),
+    figmaPaste: makeNodeComponent("figmaPaste"),
+    land: makeNodeComponent("land"),
+    rectangle502: makeNodeComponent("rectangle502"),
+    rectangle503: makeNodeComponent("rectangle503"),
+    _name: makeNodeComponent("name"),
+    иван: makeNodeComponent("\u0438\u0432\u0430\u043d"),
+    number: makeNodeComponent("number"),
+    _79085923375: makeNodeComponent("_79085923375"),
+    surname: makeNodeComponent("surname"),
+    иванов: makeNodeComponent("\u0438\u0432\u0430\u043d\u043e\u0432"),
+    password: makeNodeComponent("password"),
+    _: makeNodeComponent("_"),
+    address: makeNodeComponent("address"),
+    россияПриморскийКрайГВладивостокУлСветланская22: makeNodeComponent(
+      "\u0440\u043e\u0441\u0441\u0438\u044f\u041f\u0440\u0438\u043c\u043e\u0440\u0441\u043a\u0438\u0439\u041a\u0440\u0430\u0439\u0413\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a\u0423\u043b\u0421\u0432\u0435\u0442\u043b\u0430\u043d\u0441\u043a\u0430\u044f22"
+    ),
+    email: makeNodeComponent("email"),
+    ivanTestovichMailRu: makeNodeComponent("ivanTestovichMailRu"),
+    icon: makeNodeComponent("icon"),
+    lunaDs2: makeNodeComponent("lunaDs2"),
+    rectangle541: makeNodeComponent("rectangle541"),
+    changeButton: makeNodeComponent("changeButton"),
+    rectangle548: makeNodeComponent("rectangle548"),
+    logOutButton: makeNodeComponent("logOutButton"),
+    rectangle549: makeNodeComponent("rectangle549"),
+    logOut1: makeNodeComponent("logOut1"),
+    menu: makeNodeComponent("menu"),
+    rectangle447: makeNodeComponent("rectangle447"),
+    lunaDs1: makeNodeComponent("lunaDs1"),
+    rectangle540: makeNodeComponent("rectangle540"),
+    qa1: makeNodeComponent("qa1"),
     // Metadata about props expected for PlasmicProfile
     internalVariantProps: PlasmicProfile__VariantProps,
     internalArgProps: PlasmicProfile__ArgProps,
